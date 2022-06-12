@@ -1,0 +1,718 @@
+// "2006 Nostalgia" scheme
+// Author: SMW Central
+
+body {
+	background: url('/assets/images/schemes/classic/background.png');
+	font: 13px/16px 'Tahoma', sans-serif;
+}
+
+table, tr, td, .box {
+	box-shadow: none !important;
+}
+
+a:link {
+	font-weight: normal;
+}
+
+a.un {
+	font-weight: bold;
+}
+
+#user-menu {
+	@include color(background-color, "primary-2");
+	border-bottom: 1px solid #444;
+	font-size: 13px;
+}
+
+#user-menu > ul li a:hover, #user-menu > div a:hover, #user-menu #language-select:hover {
+	border-bottom: none;
+	background-color: #444;
+}
+
+#user-menu > div li a:hover, #user-menu > ul li li a:hover,
+#user-menu > ul li li#logout-link a:hover {
+	border-left: 2px solid transparent;
+	background-color: #444;
+	box-shadow: none;
+}
+
+#user-menu input[type="submit"] {
+	height: unset;
+	padding: 2px 4px;
+}
+
+#mobile-menu:checked ~ #main > #main-menu {
+	background: url('/assets/images/schemes/classic/text-background.png'), url('/assets/images/schemes/classic/background.png') color("primary-2");
+}
+
+#mobile-menu:checked ~ #main > #main-menu h2 {
+	margin-top: 16px;
+	background: none;
+}
+
+header#header .header-textbox,
+#main-content #getting-started,
+#user-list {
+	border-image-slice: 7;
+	border-image-width: 7px;
+	border-image-outset: 0px;
+	border-image-repeat: repeat repeat;
+	border-image-source: url('/assets/images/schemes/classic/rope.png');
+	background: url('/assets/images/schemes/classic/text-background.png'), url('/assets/images/schemes/classic/background.png') color("primary-2");
+	padding: 12px 24px;
+}
+
+#user-list {
+	font-size: 11px;
+	line-height: 15px;
+	padding: 10px 24px;
+}
+
+#main-menu {
+	border-image-slice: 16;
+	border-image-width: 16px;
+	border-image-outset: 0px;
+	border-image-repeat: repeat repeat;
+	border-image-source: url('/assets/images/schemes/classic/pipe.png');
+	padding: 9px;
+	background: url('/assets/images/schemes/classic/text-background.png') transparent;
+}
+
+#main-menu h2 {
+	position: absolute;
+	top: -3px;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-weight: bold;
+	background: url('/assets/images/schemes/classic/pipe-ends.png') center no-repeat;
+	@include color(color, "font");
+}
+
+.menu-section > header {
+	padding-left: 20px;
+	margin-bottom: 4px;
+}
+
+.menu-section > header h3 {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.menu-section ul li {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.menu-section ul li.spacer {
+	border-color: transparent !important;
+}
+
+#main-menu > .content {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.menu-section ul {
+	margin: 0;
+}
+
+.menu-section ul a:link,
+.menu-section ul a:visited {
+	font-weight: bold;
+	color: #999;
+}
+
+.menu-section ul a:hover,
+.menu-section ul a:active {
+	@include color(color, "font");
+	text-decoration: none;
+}
+
+.menu-section ul li:not(.spacer) {
+	background: url('/assets/images/schemes/classic/question-block.gif') center left no-repeat;
+	padding-left: 20px;
+}
+
+#main {
+	border: none;
+	background: none;
+	padding-top: 16px;
+	padding-left: 12px;
+	text-shadow: none;
+}
+
+#content, [id="main-menu"] + [id$="-content"] {
+	margin-right: 24px;
+	border: 16px solid transparent;
+	background: url('/assets/images/schemes/classic/text-background.png') transparent;
+	padding: 24px 4px 4px;
+	border-image-slice: 16;
+	border-image-width: 16px;
+	border-image-outset: 0 4px 0 6px;
+	border-image-repeat: repeat repeat;
+	border-image-source: url('/assets/images/schemes/classic/tree.png');
+}
+
+#content, [id="main-menu"] + [id$="-content"],
+#main-content .box#new-submissions span.text, #main-content .box#featured-submissions span.text {
+	line-height: 16px;
+}
+
+.box {
+	@include color(border-color, "secondary-2");
+	border-radius: 0;
+	background: none;
+}
+
+.box > .content {
+	margin: -1px;
+	@include color(border-color, "secondary-2");
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.box.news-articles h3,
+.box.news-articles .secondary-info,
+.box.news-articles span.text {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#recent-news .content:not(:last-of-type),
+.news-articles .content:not(:last-of-type) {
+	margin-bottom: 20px;
+}
+
+.box.news-articles h3::before {
+	display: none;
+}
+
+.box.news-articles h3.title, .box.news-articles h3 > .title {
+	font-size: 13px;
+}
+
+.box > h2, .box > h3, .box > header > h2, .box > header > h3 {
+	font-size: 13px !important;
+	text-align: center;
+	margin: 4px;
+	@include color(color, "accent-2");
+}
+
+.box > header h2::before {
+	display: none;
+}
+
+.box .read-more {
+	padding: 4px;
+}
+
+.box .read-more a {
+	@include color("link-1") using ($color) {
+		color: $color !important;
+	}
+
+	font-size: 13px;
+}
+
+.secondary-info {
+	@include color(color, "font");
+}
+
+#content h1, [id="main-menu"] + [id$="-content"] h1 {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+#content h1:not(#welcome)::before, [id="main-menu"] + [id$="-content"] h1:not(#welcome)::before {
+	transform: scale(0.5);
+	display: inline-block;
+	transform-style: inherit;
+	transform-origin: 30px 30px;
+	image-rendering: crisp-edges;
+	margin-right: 8px;
+	margin-top: -16px;
+}
+
+#main-content h1#welcome {
+	font-size: 32px;
+}
+
+#main-content .box#new-submissions h3 a, #main-content .box#featured-submissions h3 a {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.tab-view .tab-list-wrapper {
+	margin-top: -1px;
+}
+
+%tab-view-label-selected {
+	margin-right: 0;
+	@include color(border-color, "font", $lightness: 15%);
+	border-radius: 0 1px 1px 0;
+	@include color(background, "primary-2");
+	@include color(color, "font");
+	@media screen and (min-width: 1024px) {
+		border-right-color: transparent;
+	}
+}
+
+.tab-view .tab-list li label:hover, .tab-view .tab-list li > a:hover {
+	text-decoration: underline;
+}
+
+#main-content .box#calendar > header {
+	margin-bottom: 0;
+}
+
+.calendar {
+	border: 1px solid;
+	@include color(border-color, "secondary-2");
+	border-radius: 0;
+	background: none;
+}
+
+.calendar > header.month {
+	@include color(border-color, "secondary-2");
+	background: none;
+}
+
+.calendar > div {
+	@include color("secondary-2") using ($color) {
+		border-top: 1px solid $color;
+	}
+}
+
+.calendar > div * + * {
+	@include color("secondary-2") using ($color) {
+		border-left: 1px solid $color;
+	}
+}
+
+.calendar > div span + span {
+	border-left: 1px solid transparent;
+}
+
+.calendar > div a.today {
+	background: none;
+	@include color(color, "accent-2");
+}
+
+.calendar header.month a.previous,
+.calendar header.month a.next {
+	@include color("primary-2") using ($color) {
+        background-color: $color !important;
+    }
+
+	border: 1px solid #909090;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button, label.button,
+input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, a.button:hover, label.button:hover,
+input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], textarea,
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="number"]:focus,
+input[type="password"]:focus, textarea:focus,
+.cuteedit-input-text input {
+	border: 1px solid #909090;
+	border-radius: 0;
+	box-shadow: none;
+	@include color(background-color, "primary-2");
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-weight: normal;
+
+	@include color("font") using ($color) {
+		color: $color !important;
+	}
+
+	font: 13px / 16px 'Tahoma', sans-serif !important;
+}
+
+textarea, textarea:focus {
+	padding: 1px;
+	font-family: 'Courier New', monospace !important;
+}
+
+select {
+	@include color(background-color, "primary-2");
+	box-shadow: none;
+	border-radius: 0;
+	@include color(color, "font");
+	min-height: unset;
+	padding: 0;
+}
+
+.page-list {
+	font-size: 13px;
+	padding: 2px;
+}
+
+.page-list .title {
+	font-weight: normal;
+}
+
+.page-list li.active {
+	background: none;
+	border: none;
+}
+
+table.brdr td .title, table.generic td.header, table.table th, table.list th {
+	background: none;
+	padding: 2px 8px;
+	font-weight: bold;
+	@include color(color, "font");
+}
+
+table.brdr td.normal, table.generic td, table.table th, table.table td, table.list th, table.list td {
+	padding: 2px;
+}
+
+#viewforum-content .forum-list th,
+#viewforum-content .thread-list th {
+	border-bottom: 1px solid transparent;
+}
+
+#viewforum-content .forum-list th.forum, #viewforum-content .forum-list td.forum {
+	@include color("secondary-2") using ($color) {
+		border-left: 1px solid $color;
+	}
+
+	padding-left: 4px;
+	line-height: 14px;
+}
+
+#viewforum-content .forum-list td.forum h3 a, #viewforum-content .thread-list td.thread h3 a {
+	@include color(color, "link-1");
+	font-size: 13px;
+}
+
+#viewforum-content .forum-list td.forum .description {
+	font-size: 11px;
+}
+
+#viewforum-content .forum-list td.forum .moderator-list,
+#viewforum-content .forum-list td.forum .subforum-list {
+	@include color(color, "font");
+}
+
+#viewforum-content .forum-list td.last-post, #viewforum-content .thread-list td.last-post {
+	font-size: 11px;
+}
+
+#viewforum-content .forum-list td.last-post time, #viewforum-content .thread-list th.last-post time, #viewforum-content .thread-list td.last-post time {
+	font-size: 12px;
+}
+
+#viewforum-content .forum-icon.no-new {
+	display: none;
+}
+
+#viewforum-content .forum-icon.new,
+#viewforum-content .forum-icon.new-sub,
+#viewforum-content .forum-icon.new-small,
+#viewforum-content .forum-icon.thread.open,
+#viewforum-content .forum-icon.thread.closed {
+	visibility: hidden;
+	height: unset;
+	width: unset;
+	vertical-align: unset;
+}
+
+#viewforum-content .forum-icon.new::before,
+#viewforum-content .forum-icon.new-small::before {
+	content: "NEW";
+	visibility: visible;
+	@include color(color, "link-2", $lightness: -20%);
+}
+
+#viewforum-content .forum-icon.new-small::before {
+	font-weight: bold;
+}
+
+#viewforum-content .forum-icon.new-sub::before {
+	content: "NEW";
+	visibility: visible;
+	color: red;
+}
+
+#viewforum-content .forum-icon.thread.closed::before {
+	content: "OFF";
+	visibility: visible;
+	color: #ccc;
+	font-weight: bold;
+	line-height: 12px;
+}
+
+#viewforum-content .forum-icon.thread.closed.new::after {
+	content: "NEW";
+	visibility: visible;
+	@include color(color, "link-2", $lightness: -20%);
+	font-weight: bold;
+	display: block;
+	line-height: 12px;
+}
+
+table.table:not(.nonconsecutive) tbody tr:nth-child(2n) th, table.table:not(.nonconsecutive) tbody tr:nth-child(2n) td, table.table.nonconsecutive tbody tr.even th, table.table.nonconsecutive tbody tr.even td, table.list:not(.nonconsecutive) tbody tr:nth-child(2n) th, table.list:not(.nonconsecutive) tbody tr:nth-child(2n) td, table.list.nonconsecutive tbody tr.even th, table.list.nonconsecutive tbody tr.even td {
+	background: none;
+}
+
+#viewforum-content .thread-list tr.separator > td {
+	border: none;
+}
+
+#viewforum-content .forum-category .content.has-table {
+	border-bottom: none;
+}
+
+#viewforum-content .thread-list th.new, #viewforum-content .thread-list td.new {
+	width: 60px;
+}
+
+#viewforum-content .thread-list th.thread, #viewforum-content .thread-list td.thread {
+	@include color("secondary-2") using ($color) {
+		border-left: 1px solid $color;
+	}
+
+	padding-left: 4px;
+}
+
+#viewforum-content .forum-list td.forum h3, #viewforum-content .thread-list td.thread h3 {
+	font-weight: normal;
+	font-size: 13px;
+}
+
+#viewthread-content #bbcode-editor.collapsed {
+	background: none;
+}
+
+.top-line .breadcrumbs {
+	@include color(color, "font");
+}
+
+.top-line:last-child {
+	margin-top: 16px;
+}
+
+#bbcode-editor + .top-line {
+	margin-top: 0;
+}
+
+.box.post {
+	margin: -1px 0;
+}
+
+.box.post .sidebar {
+	@include color("secondary-2") using ($color) {
+		border-right: 1px solid $color;
+	}
+
+	padding: 4px;
+}
+
+.box.post .sidebar h3 {
+	line-height: 15px;
+}
+
+.box.post .sidebar .un-outer {
+	font-size: 13px;
+}
+
+.box.post .sidebar .status, .box.post .sidebar .rank, .box.post .sidebar .title, .box.post .sidebar .info {
+	font-size: 10px;
+	line-height: 12px;
+	@include color(color, "font");
+}
+
+.box.post .sidebar .status *, .box.post .sidebar .info * {
+	font-weight: normal;
+}
+
+.box.post .post-info,
+.box.post .post-edited {
+	margin: 0 4px;
+	font-size: 10px;
+	@include color(color, "font");
+}
+
+.box.post .post-edited {
+	text-align: left;
+	font-style: italic;
+}
+
+.box.post .post-edited .un {
+	font-weight: bold;
+}
+
+.box.post > .content {
+	padding-top: 4px;
+	padding-left: 4px;
+}
+
+.box.post + form {
+	margin-top: 20px;
+}
+
+.quote, .code {
+	border: none;
+	background: none;
+}
+
+.quote .boxhead, .code .boxhead {
+	font-size: 11px;
+	margin: 2px 4px;
+}
+
+.code .boxhead {
+	color: #0f0;
+}
+
+a.js-link {
+	@include color(color, "accent-2");
+}
+
+.quote > .box {
+	@include color(border-color, "secondary-2");
+	background: none;
+	padding: 3px 24px 3px 3px;
+}
+
+.code > .box {
+	border-color: #0f0;
+	background: none;
+	font-family: 'Courier New', monospace;
+}
+
+#viewthread-content .poll h3 {
+	margin: 2px;
+}
+
+#viewthread-content .poll .content {
+	grid-gap: 4px;
+}
+
+#viewthread-content .poll .percentage {
+	border: 1px solid;
+	@include color(border-color, "secondary-2");
+	border-radius: 0;
+	height: 20px;
+}
+
+#viewthread-content .poll .percentage .bar {
+	background-image: none;
+	@include color(background-color, "secondary-2");
+	border: none;
+	border-radius: 0;
+	height: 18px;
+	line-height: 18px;
+}
+
+table.brdr td.normal, table.generic td, table.table th, table.table td, table.list th, table.list td {
+	padding: 1px 4px;
+	line-height: 16px;
+}
+
+table.table td.text, table.list td.text {
+	line-height: 16px;
+}
+
+table.table td.text, table.list td.text .secondary-info {
+	font-size: 10px;
+	@include color(color, "font", $lightness: -15%);
+}
+
+table.list th a,
+#section-list-content .sort-options a {
+	@include color(color, "accent-1");
+}
+
+div.form div.prompt p {
+	font-size: 11px;
+}
+
+h2.submission:before {
+	display: none;
+}
+
+#section-details-content td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#section-details-content td.name {
+	font-size: 13px;
+}
+
+#section-details-content .download-section {
+	@include color("secondary-2") using ($color) {
+		border-top: 1px solid $color;
+	}
+}
+
+a.tag {
+	@include color("secondary-2") using ($color) {
+		background-color: $color !important;
+	}
+
+	padding-left: 18px !important;
+}
+
+#viewforum-content a.tag > span, #viewforum-content span.tag > span, #viewthread-content a.tag > span {
+	padding-left: 4px;
+}
+
+#section-details-content .tag::after {
+	content: "•";
+	position: absolute;
+	top: 0;
+	left: 4px;
+	font-size: 24px;
+	line-height: 16px;
+	@include color(color, "primary-2");
+	text-shadow: none;
+}
+
+#section-list-content .gallery li {
+	margin-bottom: 20px;
+}
+
+#section-list-content .gallery h3 {
+	line-height: 16px;
+}
+
+#section-list-content .gallery h3 a {
+	@include color(color, "link-1");
+	font-size: 13px;
+}
+
+#section-list-content td.has-preview .preview-icon > a {
+	padding: 2px;
+	height: 24px;
+	width: 24px;
+}
+
+table.brdr, table.brdr td {
+	@include color("secondary-2") using ($color) {
+		border: 1px solid $color;
+	}
+}
+
+#section-details-content .download-section a.button {
+	font-size: 20px !important;
+}
+
+.cuteedit-emoticons .cuteedit-list-parent span {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	@include color(color, "font", $lightness: -15%);
+}
+
+#footer {
+	border: none;
+	font-size: 13px;
+}

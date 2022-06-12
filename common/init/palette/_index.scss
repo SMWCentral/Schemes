@@ -1,0 +1,12 @@
+@import 'logic';
+
+$light: false !default;
+$palette: () !default;
+
+@import 'default';
+
+$palette: map-merge($palette, (
+	"font-inverse": invert(map-get($palette, "font"))
+));
+
+@import 'variations';

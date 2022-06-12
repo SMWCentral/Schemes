@@ -1,0 +1,489 @@
+// "Rust" scheme
+// Author: SMW Central
+
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans:700,400';
+
+body {
+	font: 13px / 150% "Droid Sans", sans-serif;
+}
+
+a:link, a:visited {
+	font-weight: 700;
+}
+
+hr {
+	@include color("primary-2") using ($color) {
+		border-top: 1px solid $color;
+	}
+}
+
+header#header .header-textbox {
+	@include color("primary-1", $lightness: -15%) using ($color) {
+		border: 1px solid $color;
+	}
+	
+	padding: 4px 12px;
+	border-radius: 2px;
+	
+	@include color("font-inverse", $alpha: 0.3) using ($color) {
+		box-shadow: 0 5px 3px -3px $color;
+	}
+	
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) color("secondary-1");
+}
+
+#user-menu {
+	@include color("primary-1", $lightness: 15%) using ($color) {
+		border-bottom: 2px solid $color;
+	}
+	
+	font-size: 13px;
+	
+	input[type="submit"] {
+		padding: 0 4px;
+	}
+}
+
+%info, %warning {
+	width: auto;
+	border-radius: 1px;
+	background-image: linear-gradient(to bottom, rgba(black, 0) 0%, rgba(black, 0.3) 100%);
+	padding: 4px 8px;
+	box-shadow: 0 0 5px rgba(white, 0.1);
+	text-shadow: none;
+}
+
+#main-content #getting-started {
+	width: auto;
+	margin-bottom: 32px;
+	
+	@include color("accent-2", $lightness: 20%) using ($color) {
+		border: 1px solid $color;
+	}
+	
+	padding: 4px 8px;
+	border-radius: 1px;
+	box-shadow: 0 0 10px rgba(black, 0.05), 0 5px 3px -3px rgba(black, 0.3);
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) color("accent-2");
+	@include color(color, "font", $alpha: 0.85);
+	text-shadow: inherit;
+}
+
+#main {
+	text-shadow: 0 1px 1px black;
+}
+
+#content, [id="main-menu"] + [id$="-content"] {
+	margin-right: 15px;
+}
+
+.box {
+	margin-bottom: 32px;
+	
+	@include color("secondary-1") using ($color) {
+		border: 1px solid $color;
+	}
+	
+	@include color("font-inverse", $alpha: 0.3) using ($color) {
+		box-shadow: 0 3px 3px $color;
+	}
+	
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) color("secondary-2");
+	border-radius: 1px;
+	text-shadow: inherit;
+	
+	.content {
+		margin: 4px;
+		
+		@include color("secondary-1") using ($color) {
+			border: 1px solid $color;
+		}
+		
+		text-shadow: inherit;
+	}
+	
+	.read-more {
+		padding-top: 4px;
+	}
+}
+
+.tab-view {
+	.tab-list-wrapper {
+		margin-top: 0;
+		
+		@media screen and (min-width: 1024px) {
+			margin-top: 4px;
+		}
+	}
+	
+	.content {
+		margin-left: 0;
+	}
+	
+	.tab-list li {
+		label, > a {
+			margin: 0;
+			padding-right: 12px;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+%tab-view-label-selected {
+	@include color("secondary-1", $lightness: -10%) using ($color) {
+		border: 1px solid $color;
+	}
+	
+	border-right-width: 0;
+}
+
+#main-content .box-container .box {
+	margin-right: 16px;
+	
+	&:last-child {
+		margin-left: 16px;
+	}
+}
+
+.menu-section {
+	ul {
+		margin-left: 12px;
+	}
+	
+	> header h3, ul li {
+		font-size: 13px;
+		line-height: inherit;
+	}
+	
+	ul li.spacer {
+		@include color("primary-2") using ($color) {
+			border-top: 1px solid $color;
+		}
+		
+		@include color("secondary-2") using ($color) {
+			border-bottom: 1px solid $color;
+		}
+		
+		visibility: visible;
+	}
+}
+
+.calendar {
+	@include color("accent-2", $lightness: -20%) using ($color) {
+		border: 1px solid $color;
+	}
+	
+	border-radius: 2px 2px 1px 1px;
+	box-shadow: 0 3px 3px rgba(black, 0.3);
+	
+	> header.month {
+		background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) color("accent-2");
+		
+		@include color("accent-2", $lightness: -20%) using ($color) {
+			border-bottom: 1px solid $color;
+		}
+		
+		border-radius: 0;
+		
+		a {
+			@include color("accent-2", $lightness: -60%) using ($color) {
+				border-top: 1px solid $color;
+			}
+			
+			@include color("accent-2", $lightness: 20%) using ($color) {
+				border-bottom: 1px solid $color;
+			}
+			
+			@include color("accent-2", $lightness: -50%) using ($color) {
+				background-color: $color !important;
+			}
+			
+			&:hover {
+				@include color("accent-2", $lightness: -45%) using ($color) {
+					background-color: $color !important;
+				}
+			}
+		}
+	}
+	
+	> header.week {
+		box-shadow: none;
+	}
+}
+
+#viewforum-content {
+	.forum-list td.forum h3,
+	.thread-list td.thread h3 {
+		font-size: 13px;
+	}
+
+	.forum-list th.forum, .forum-list td.forum {
+		line-height: 19px;
+	}
+
+	.forum-list td.threads,
+	.forum-list td.posts,
+	.forum-list td.last-post {
+		font-size: 12px;
+	}
+	
+	.thread-list tr.separator > td {
+		@include color("secondary-1") using ($color) {
+			border: 1px solid $color;
+		}
+		
+		border-left: none;
+		border-right: none;
+	}
+	
+	.thread-list select, .thread-list .right-icon {
+		margin-left: 6px;
+	}
+	
+	.tagged-notice {
+		margin-bottom: 16px;
+		
+		.tag {
+			background: none !important;
+		}
+	}
+}
+
+table.table, table.list {
+	border-collapse: inherit;
+}
+
+table.list {
+	th, td {
+		border-color: color("secondary-2") color("secondary-2") color("primary-2") color("primary-2");
+		line-height: inherit;
+	}
+}
+
+.page-list > li.active {
+	margin: 0.125em; // 0.25em / 2
+	@include color(background-color, "secondary-2");
+	color: inherit;
+}
+
+.box.post {
+	.post-info {
+		margin: 3px 5px 0 5px;
+		line-height: inherit;
+	}
+	
+	.post-edited {
+		margin: 3px 5px;
+		line-height: inherit;
+		text-align: right;
+	}
+	
+	> .content {
+		padding-left: 8px;
+		
+		:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+#viewthread-content {
+	.poll {
+		.content {
+			grid-gap: 16px;
+		}
+		
+		.option {
+			display: initial;
+			min-height: 20px;
+			padding-right: 8px;
+			
+			label {
+				margin-left: 0;
+			}
+		}
+		
+		.percentage {
+			height: 20px;
+			
+			@include color("secondary-1") using ($color) {
+				border: 1px solid $color;
+			}
+			
+			border-radius: 2px;
+			box-shadow: 0 3px 3px rgba(black, 0.4), 0 3px 3px rgba(black, 0.3) inset;
+			
+			.bar {
+				height: auto;
+				line-height: inherit;
+				
+				@include color("secondary-1") using ($color) {
+					border-right: 1px solid $color;
+				}
+				
+				border-radius: 0;
+				background: linear-gradient(to bottom, rgba(black, 0) 0%, rgba(black, 0.3) 100%) #8C2C2C;
+			}
+		}
+		
+		.footer {
+			margin-top: 0;
+		}
+	}
+	
+	#bbcode-editor.collapsed {
+		background: none;
+	}
+}
+
+span.new {
+	@include color(color, "link-2", -20%);
+}
+
+.quote, .code {
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) color("secondary-2");
+	
+	@include color("secondary-1") using ($color) {
+		border: 1px solid $color;
+	}
+	
+	> .box {
+		@include color("secondary-1") using ($color) {
+			border: 1px solid $color;
+		}
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.boxhead {
+		margin-bottom: 4px !important;
+	}
+}
+
+.code > .box {
+	background-color: #09110D;
+}
+
+.emoticon {
+	vertical-align: bottom;
+}
+
+select {
+	background-color: #DDD;
+	color: #222;
+	border: 1px solid #AAA;
+	padding: 0 0 0 8px;
+	border-radius: 2px;
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], textarea,
+.cuteedit-input-text input {
+	background: #DDD;
+	border-radius: 2px;
+	padding: 3px;
+	font-size: inherit;
+	color: #222;
+	
+	&:focus {
+		border: 1px solid #333;
+		background: #F8F8F8;
+		box-shadow: 0 1px 1px rgba(black, 0.5) inset, 0 0 2px 1px #8FB7EF;
+	}
+}
+
+textarea {
+	line-height: 20px;
+}
+
+.cuteedit-input-text {
+	color: #b5b5b5;
+	padding: 3px 0;
+
+	input {
+		border: 1px solid #111;
+		border-radius: 2px;
+		background: #DDD;
+		padding: 3px;
+		box-shadow: 0 1px 1px rgba(black, 0.5) inset;
+		font-family: "Droid Sans", sans-serif;
+		color: #222;
+	}
+}
+
+div.form .row {
+	align-items: initial;
+	
+	@include color("primary-2") using ($color) {
+		border-bottom: 1px solid $color;
+	}
+}
+
+div.form div.field label {
+	margin: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button, label.button {
+	background: linear-gradient(to bottom, rgba(black, 0) 0%, rgba(black, 0.3) 100%) color("secondary-2");
+	padding: 3px 8px;
+	@include color(color, "font", $alpha: 0.75);
+	@include color("secondary-1") using ($color) {
+		border: 1px solid $color;
+	}
+	box-shadow: 0 0 5px rgba(white, 0.1), 0 0 0 2px rgba(white, 0.1) inset;
+	border-radius: 2px;
+	text-shadow: inherit;
+	font-weight: bold;
+	
+	&:hover, &:focus {
+		@include color("secondary-1", $lightness: 10%) using ($color) {
+			border: 1px solid $color;
+		}
+		
+		@include color(background-color, "secondary-2");
+		box-shadow: 0 0 5px rgba(white, 0.25), 0 0 0 2px rgba(white, 0.15) inset;
+		@include color(color, "font", $alpha: 0.85);
+	}
+	
+	&:active {
+		@include color("secondary-1") using ($color) {
+			border: 1px solid $color;
+		}
+		
+		background-color: inherit;
+		box-shadow: 0 0 5px rgba(white, 0.1), 0 0 0 2px rgba(white, 0.25) inset;
+		@include color(color, "font", $alpha: 0.75);
+    }
+    
+    &:disabled, &.disabled {
+        @include color("secondary-1") using ($color) {
+			border: 1px solid $color;
+		}
+    }
+}
+
+.final-step input[name="submit"] {
+	padding: 1px 8px;
+}
+
+#section-details-content {
+	.download-section a.button {
+		width: 150px;
+		padding: 16px 8px;
+		font-size: 20px;
+		font-weight: normal;
+	}
+	
+	.tag, a.tag {
+		background-color: rgba(white, 0.15) !important;
+	}
+}
+
+#footer {
+	font-size: 12px;
+	line-height: 18px;
+}

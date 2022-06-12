@@ -1,0 +1,14 @@
+{
+  "name": "@smwcentral/schemes",
+  "version": "1.0.0",
+  "description": "SMWC2 Schemes",
+  "scripts": {
+    "build": "cross-env sass --embed-source-map --no-charset --load-path=schemes/$npm_config_scheme schemes/scheme.scss schemes/scheme.css"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "sass": "^1.52.3"
+  }
+}

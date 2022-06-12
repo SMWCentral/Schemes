@@ -1,0 +1,82 @@
+@use 'sass:math';
+
+@function color($base, $lightness: 0%, $alpha: 1, $validate: true, $asValue: true) {
+	$color: $base;
+	
+	@if $lightness != 0% {
+		@if $validate and $light and $lightness > 0% {
+			$lightness: -$lightness;
+		}
+		
+		$color: "#{$color}-l#{math.div($lightness, 1%)}";
+	}
+	
+	@if $alpha != 1 {
+		$color: "#{$color}-a#{round($alpha * 100)}";
+	}
+	
+	@if $validate and not map-has-key($palette, $color) {
+		@error "Color #{$base} with lightness #{$lightness} and alpha #{$alpha} (#{$color}) is not defined in the palette.";
+	}
+	
+	@if $asValue {
+		@return unquote("var(--#{$color})");
+	}
+	
+	@return $color;
+}
+
+@mixin variation($base, $lightness: 0%, $alpha: 1) {
+	@if not map-has-key($palette, $base) {
+		@error "Color #{$base} is not defined in the palette.";
+	}
+	
+	$color: map-get($palette, $base);
+	$lightness: abs($lightness);
+	
+	$key1: color($base, $lightness: $lightness, $alpha: $alpha, $validate: false, $asValue: false);
+	
+	@if $key1 != $base {
+		$scaled: scale-color($color, $lightness: $lightness);
+		
+		$palette: map-merge($palette, (
+			$key1: if($alpha == 1, $scaled, rgba($scaled, $alpha))
+		)) !global;
+	}
+	
+	$key2: color($base, $lightness: -$lightness, $alpha: $alpha, $validate: false, $asValue: false);
+	
+	@if $key1 != $key2 and $key2 != $base {
+		$scaled: scale-color($color, $lightness: -$lightness);
+		
+		$palette: map-merge($palette, (
+			$key2: if($alpha == 1, $scaled, rgba($scaled, $alpha))
+		)) !global;
+	}
+}
+
+@mixin color($property, $color: null, $lightness: 0%, $alpha: 1) {
+	@if str-index($property, "{color}") {
+		@error "old color call";
+	}
+	
+	$partial: true;
+	
+	@if type-of($color) != "string" {
+		$color: $property;
+		$partial: false;
+	}
+	
+	$key: color($color, $lightness: $lightness, $alpha: $alpha, $validate: true, $asValue: false);
+	
+	@if $partial {
+		#{$property}: map-get($palette, $key);
+		#{$property}: unquote("var(--#{$key})");
+	} @else {
+		$color: map-get($palette, $key);
+		@content($color);
+		
+		$color: unquote("var(--#{$key})");
+		@content($color);
+	}
+}

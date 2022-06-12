@@ -1,0 +1,136 @@
+// "Default" scheme
+// Author: SMW Central
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap';
+
+body {
+    font: 14px / 150% "Roboto", sans-serif;
+}
+
+.header-textbox, #main, #user-list, #footer {
+	a:not(.button):not(.tag):not(.forum-icon) {
+		&:hover, &:active, &:focus {
+			background: linear-gradient(to bottom, currentColor -25000%, transparent 10000%);
+		}
+	}
+}
+
+a.un {
+	font-weight: bold;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button, label.button {
+	&:hover, &:active, &:focus {
+		box-shadow: 0 2px 2px rgba(black, 0.35), 0 0 0 2px rgba(white, 0.15) inset;
+	}
+}
+
+#user-menu #search input[type="text"] {
+    @include color("secondary-1") using ($color) {
+		border: 1px solid $color;
+    }
+
+    padding: 3px 6px;
+
+    &:focus {
+        border-color: transparent;
+    }
+}
+
+.tab-view .tab-list li label:hover, .tab-view .tab-list li > a:hover {
+	@include color("secondary-2", $lightness: -20%) using ($color) {
+		background: $color !important;
+	}
+	
+	text-decoration: none;
+}
+
+#submission-details table.list td {
+	line-height: 21px;
+}
+
+#submission-details table.list td:last-child {
+	padding-right: 32px;
+}
+
+.page-list + .content {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.content + header {
+	margin-top: -8px;
+}
+
+#viewforum-content .forum-view .content:first-child {
+	margin-top: 10px;
+}
+
+.final-step input[name="submit"] {
+	@include color("highlight", $alpha: 0.5) using ($color) {
+		border: 2px solid $color;
+	}
+
+	@include color("highlight", $lightness: 10%) using ($color) {
+		color: $color !important;
+	}
+
+	font-weight: bold;
+
+	&:hover, &:active {
+		@include color(border-color, "highlight", $alpha: 0.75);
+
+		box-shadow: 0 2px 2px rgba(black, 0.35);
+
+		@include color("highlight", $lightness: 20%) using ($color) {
+			color: $color !important;
+		}
+	}
+}
+
+table.list {
+	th, td {
+		&:first-child {
+			border-left: none;
+		}
+		
+		&:last-child {
+			border-right: none;
+		}
+	}
+	
+	tr:last-child td {
+		border-bottom: none;
+	}
+}
+
+.content.has-table:first-child {
+	margin-top: 8px;
+}
+
+.quote, .code {
+	border: 1px solid transparent;
+	@include color(background, "secondary-2");
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button {
+	&.action, input[name="submit"] {
+		@include color("highlight", $lightness: 20%) using ($color) {
+			color: $color !important;
+		}
+	}
+	
+	&.action.staff {
+		@include color("accent-1", $lightness: 30%) using ($color) {
+			color: $color !important;
+		}
+	}
+}
+
+#viewforum-content .forum-list td.forum h3, #viewforum-content .thread-list td.thread h3 {
+	font-weight: normal;
+}
+
+textarea {
+	font-size: 14px;
+}

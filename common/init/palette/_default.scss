@@ -1,0 +1,12 @@
+$palette: map-merge((
+	"primary-1": #1D1E26,
+	"primary-2": #121417,
+	"secondary-1": #76767C,
+	"secondary-2": #3F3F45,
+	"accent-1": #EE8866,
+	"accent-2": #4C5562,
+	"highlight": #8FB7EF,
+	"font": #DDD,
+	"link-1": #ABC8EF,
+	"link-2": #F79F6A
+), $palette);
