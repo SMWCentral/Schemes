@@ -24,7 +24,7 @@ SMW Central uses Sass to preprocess its CSS. If you want to preview a scheme, yo
 
 Assuming you have [Node](https://nodejs.org/en/) installed on your computer, start by running `npm install` to download Sass.
 
-Then, run `npm run build --scheme=<name>` to build a given scheme. For example, to build the default scheme, run `npm run build --scheme=default`.
+Then, run `npm run build -- <name>` to build a given scheme. For example, to build the default scheme, run `npm run build -- default`.
 
 Schemes are built as `schemes/scheme.css`. You can then use your browser's developer tools or an extension such as Stylish or Stylus to insert the file into an SMW Central page.
 
