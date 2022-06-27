@@ -11,6 +11,10 @@ To get started, copy the `template` directory into `schemes` and rename it to ma
 
 The main file in a scheme is `_palette.scss`. It contains [variables](https://sass-lang.com/documentation/variables) that define the colors of your schemes. Change `$light` to `true` if you're making a light scheme (it mainly influences the font color). `$palette` is a [map](https://sass-lang.com/documentation/values/maps) containing the color palette. Do not remove any of the entries from `$palette` or add any new ones.
 
+This image shows example uses of all colors from the palette. Note that these are only examples - colors are widely reused across different components.
+
+![Palette](palette.png)
+
 You can put any CSS you want in `_custom.scss`. You may use any of Sass's features if you wish, including the mixins from the `common` files (check the existing schemes for examples). **Please limit your custom CSS to a minimum**, as it will not be supported by the development team and may get broken at any time (the "official" schemes are an example of what custom CSS *shouldn't* look like).
 
 Do not edit `schemes/scheme.scss` or anything in the `common` directory.
