@@ -53,6 +53,8 @@ a.un {
 header#header .header-textbox,
 #main-content #getting-started,
 #user-list {
+	border-style: solid;
+	border-width: 0.01px;
 	border-image-slice: 7;
 	border-image-width: 7px;
 	border-image-outset: 0px;
@@ -69,6 +71,8 @@ header#header .header-textbox,
 }
 
 #main-menu {
+	border-style: solid;
+	border-width: 0.01px;
 	border-image-slice: 16;
 	border-image-width: 16px;
 	border-image-outset: 0px;
@@ -415,6 +419,7 @@ table.brdr td.normal, table.generic td, table.table th, table.table td, table.li
 #viewforum-content .forum-icon.new,
 #viewforum-content .forum-icon.new-sub,
 #viewforum-content .forum-icon.new-small,
+#viewforum-content .forum-icon.new-sub-small,
 #viewforum-content .forum-icon.thread.open,
 #viewforum-content .forum-icon.thread.closed {
 	visibility: hidden;
@@ -434,7 +439,8 @@ table.brdr td.normal, table.generic td, table.table th, table.table td, table.li
 	font-weight: bold;
 }
 
-#viewforum-content .forum-icon.new-sub::before {
+#viewforum-content .forum-icon.new-sub::before,
+#viewforum-content .forum-icon.new-sub-small::before {
 	content: "NEW";
 	visibility: visible;
 	color: red;
