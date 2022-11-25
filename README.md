@@ -1,11 +1,11 @@
 # SMW Central - Site Schemes
-All of the site schemes available on [SMW Central](https://www.smwcentral.net/)'s new SMWC2 design. This repository contains the files necessary to create a custom site scheme.
+All of the site schemes available on [SMW Central](https://www.smwcentral.net/). This repository also contains the files necessary to create a custom site scheme.
 
 ## Layout
 The site schemes are stored in the `schemes` directory. The template for making a new scheme is in `template`. The `common` directory is split from the site's code and contains the bare minimum Sass code required to build a scheme.
 
 ## Making a new scheme
-Anyone can make an SMWC2 scheme - no need to ask! After you're done, send us a pull request or get in touch directly.
+Anyone can make a scheme - no need to ask! After you're done, send us a pull request or get in touch directly.
 
 To get started, copy the `template` directory into `schemes` and rename it to match your scheme. Then, edit the comment at the top of `_custom.scss` to include your scheme's name and your username.
 
@@ -31,7 +31,7 @@ Schemes are built as `schemes/scheme.css`. You can then use your browser's devel
 ## Support
 Feel free to ask [Telinc1](https://smwc.me/u/15661) if you have any questions regarding the schemes.
 
-Note that the "legacy schemes" (the old schemes from the current non-SMWC2 site design) are not, and won't be, included in this repository due to their complexity. The code for individual schemes will be provided on-demand if you want to port or re-create one.
+Note that the "legacy schemes" from the old site design are not, and won't be, included in this repository due to their complexity. The code for individual schemes will be provided on-demand if you want to port or re-create one.
 
 ## License
 Released under the [MIT License](https://github.com/SMWCentral/Schemes/blob/main/LICENSE.md).
@@ -40,4 +40,4 @@ Released under the [MIT License](https://github.com/SMWCentral/Schemes/blob/main
 Built and maintained by [Telinc1](https://github.com/telinc1). SMW Central is property of [Noivern](https://smwc.me/u/6651).
 
 ## Version
-The included SCSS files are split from commit `89dfaf0` of the SMW Central source code.
+The included SCSS files are split from commit `1a370de` of the SMW Central source code.
