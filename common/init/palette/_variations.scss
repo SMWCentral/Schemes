@@ -6,17 +6,22 @@
 @include variation("primary-2", 10%);
 @include variation("primary-2", 15%);
 
+@include variation("secondary-1", 5%);
 @include variation("secondary-1", 10%);
+@include variation("secondary-1", 20%);
 
 @include variation("secondary-2", 0%, 0.3);
+@include variation("secondary-2", 5%);
 @include variation("secondary-2", 10%);
 @include variation("secondary-2", 20%);
 
+@include variation("accent-1", 10%);
+@include variation("accent-1", 20%);
 @include variation("accent-1", 30%);
 
-@include variation("accent-2", 20%);
 @include variation("accent-2", 5%);
 @include variation("accent-2", 10%);
+@include variation("accent-2", 20%);
 @include variation("accent-2", 45%);
 @include variation("accent-2", 50%);
 @include variation("accent-2", 60%);
@@ -40,5 +45,9 @@
 @include variation("font-inverse", 0%, 0.75);
 
 @include variation("link-1", 35%);
+@include variation("link-1", 20%);
+@include variation("link-1", 10%);
 
+@include variation("link-2", 35%);
 @include variation("link-2", 20%);
+@include variation("link-2", 10%);

@@ -1,0 +1,766 @@
+// "Ambiance" scheme
+// Author: AmperSam
+
+@import 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap';
+
+
+// reset
+%reset {
+  box-shadow: none !important;
+  border: none !important;
+  background-image: none !important;
+}
+
+* {
+  text-shadow: none !important;
+}
+
+body {
+  font: 14px / 150% "Rubik", sans-serif;
+}
+
+
+#header {
+  border-bottom: 1px solid rgba(0, 0, 0,.2);
+  box-shadow: 0 2px 2px 0px rgba(black, 0.10),
+              0 4px 4px 2px rgba(black, 0.05);
+
+  > .header-background {
+    background-position: center !important;
+    background-size: cover !important;
+    filter: blur(3px) !important;
+    margin: -5px !important;
+    overflow: hidden;
+  }
+
+  > .header-shading {
+    background: none !important;
+    border-bottom: 1px solid rgba(white,.1) !important;
+    transition: none;
+
+  }
+}
+
+#main {
+  @extend %reset;
+  background: none !important;
+}
+
+#footer {
+  background: url("/assets/images/background.png") var(--primary-2-l-15) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 2px 10px 4px rgba(0, 0, 0, 0.1),
+              inset 0 0 10px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+#main-content {
+
+  #getting-started {
+    @extend %box;
+    @include color("secondary-2", $lightness: 10%) using ($color) {
+      background: $color !important;
+    }
+  }
+}
+
+aside {
+  border-radius: 6px !important;
+}
+
+.header-textbox, #main, #user-list, #footer {
+  a:not(.button):not(.tag):not(.forum-icon) {
+    &:hover, &:active, &:focus {
+      background: linear-gradient(to bottom, currentColor -25000%, transparent 10000%);
+    }
+  }
+}
+
+span.new {
+  padding: 1px 3px;
+  border-radius: 4px;
+  background-color: color("highlight") !important;;
+  color: rgba(black,0.7);
+  font-size: 0.8em;
+}
+
+
+// correction of link colors
+.menu-links li > a,
+.actions > a {
+  color: color("link-1") !important;
+}
+
+
+a.un {
+  font-weight: bold;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button, label.button {
+  &:hover, &:active, &:focus {
+    box-shadow: 0 0 0 2px rgba(white, 0.15) inset;
+  }
+}
+
+// user menu
+#user-menu {
+  @include color("secondary-2", $lightness: -20%) using ($color) {
+    background: $color !important;
+  }
+  border-bottom: 1px solid rgba(black,.1) !important;
+  box-shadow: 0 2px 2px 0px rgba(black, 0.10),
+              0 4px 4px 2px rgba(black, 0.05);
+
+  #username,
+  #language-select,
+  div a,
+  > ul li a {
+    border: none !important;
+    box-shadow: none !important;
+
+    &:hover {
+      box-shadow: none !important;
+      background-color: rgba(white,.1) !important;
+    }
+
+    &:active {
+      background-color: rgba(white,.2) !important;
+    }
+  }
+
+
+  #search input[type="text"] {
+    background: color("primary-2") !important;
+    border: none;
+    box-shadow: none;
+    border-radius: 6px;
+
+    &:focus {
+      @include color("primary-2", $lightness: 10%) using ($color) {
+        background: $color !important;
+      }
+      border: none !important;
+      box-shadow: inset 0 0 0 2px rgba(white, 0.2);
+    }
+  }
+
+  .submenu {
+    box-shadow: 0 2px 2px 0px rgba(black, 0.15),
+                0 4px 4px 2px rgba(black, 0.1) !important;
+  }
+}
+
+
+#mobile-menu:checked ~ #user-menu #mobile-menu-button > label {
+  background-color: rgba(white,.1) !important;
+  box-shadow: none !important;
+}
+
+
+#main-content,
+#main-menu {
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+.form-multi-item {
+  border: none !important;
+  border-radius: 3px;
+  background-color: rgba(black, 0.2);
+}
+
+.form-multi-input[type="text"], .form-multi-input[type="text"]:focus {
+  background: none !important;
+}
+
+// header boxes
+.header-textbox {
+  background: rgba(29, 26, 29, 0.8) !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+}
+
+// entries
+input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], select, textarea, .form-multi, {
+  @include color("secondary-2", $lightness: 10%) using ($color) {
+    background: $color !important;
+  }
+  border: none;
+  box-shadow: none;
+  border-radius: 6px;
+
+  &:focus {
+    @include color("secondary-2", $lightness: 20%) using ($color) {
+      background: $color !important;
+    }
+    border: none !important;
+    box-shadow: inset 0 0 0 1px rgba(white, 0.2);
+  }
+}
+
+select {
+
+  &:focus {
+    @include color("secondary-2", $lightness: 20%) using ($color) {
+      background: $color !important;
+    }
+    border: none !important;
+    box-shadow: inset 0 0 0 1px rgba(white, 0.2);
+  }
+
+  &:not([multiple]){
+    padding: 2px 8px;
+  }
+
+  * {
+    color: inherit !important;
+  }
+
+  option {
+    padding: 2px;
+    margin-top: 2px;
+    border-radius: 2px;
+
+    &:hover {
+      background: color("secondary-2") !important;
+    }
+
+    &:checked {
+      background: color("link-1") !important;
+      color: rgba(black,.7) !important;
+    }
+  }
+}
+
+
+// buttons
+input[type="button"], input[type="submit"], input[type="reset"], button, a.button, label.button {
+  @extend %reset;
+
+  background: color("secondary-1");
+  border-radius: 6px;
+  padding: 3px 12px !important;
+  color: color("font") !important;
+
+  &:hover {
+    @include color("secondary-1", $lightness: 10%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &:active {
+    @include color("secondary-1", $lightness: 20%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &.action,
+  &.action.user {
+    @extend %user_action;
+  }
+
+  &.action.staff {
+    @extend %staff_action;
+  }
+}
+
+// spc player things
+.preview-icon {
+
+  >.button {
+    padding: 6px !important;
+    border-radius: 24px;
+    &.spc-preview {
+      border-radius: 9px;
+    }
+  }
+
+  > a[data-playing-spc] {
+    @include color("link-2") using ($color) {
+      background: $color !important;
+    }
+    svg {
+      @include color("link-2", $lightness: -20%) using ($color) {
+        fill: $color !important;
+      }
+    }
+  }
+
+}
+
+.collapsible {
+  transition: all 300ms ease !important;
+}
+
+time,
+.time {
+  font-feature-settings: "tnum" 1;
+}
+
+
+.top-line {
+  p {
+    @include color("font", $alpha: 0.75) using ($color) {
+      color: $color !important;
+    }
+  }
+
+  strong {
+    color: color("font") !important;
+  }
+}
+
+
+// final step
+.download-section,
+.final-step {
+  font-size: 110%;
+
+  .button, input {
+    height: auto !important;
+    padding: 6px 12px !important;
+    font-size: 1.1rem !important;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  .button,
+  input[type="reset"] {
+    @extend .button;
+    color: inherit !important;
+  }
+
+  input[type="submit"] {
+    @extend %user_action;
+    font-weight: normal !important;
+    &.submit {
+      color: rgba(black,0.5) !important;
+    }
+  }
+
+}
+
+
+// Calendar
+.calendar {
+  box-shadow: none;
+  border:none;
+  background:none;
+
+  > header {
+
+    &.month {
+      background: none;
+      border: none;
+
+      a {
+        border: none;
+        border-radius: 2px;
+        background-color: transparent !important;
+
+        &:hover {
+          @include color("secondary-2", $lightness: 10%) using ($color) {
+            background-color: $color !important;
+          }
+        }
+
+        &:focus,
+        &:active {
+          @include color("secondary-2", $lightness: 20%) using ($color) {
+            background-color: $color !important;
+          }
+        }
+      }
+    }
+
+    &.week {
+      box-shadow: none;
+    }
+  }
+
+  a {
+
+    &.day {
+      border-radius: 2px;
+      margin: 2px;
+
+      &.highlight {
+        background: color("secondary-1") !important;
+
+        &:hover {
+          @include color("secondary-1", $lightness: 10%) using ($color) {
+            background: $color !important;
+          }
+        }
+
+        &:focus {
+          @include color("secondary-1", $lightness: 20%) using ($color) {
+            background: $color !important;
+          }
+        }
+      }
+
+      &.selected {
+        background: color("link-1") !important;
+
+        &:hover {
+          @include color("link-1", $lightness: 10%) using ($color) {
+            background: $color !important;
+          }
+        }
+
+        &:focus {
+          @include color("link-1", $lightness: 20%) using ($color) {
+            background: $color !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tab View
+
+.tab-view {
+  .content {
+    margin: 6px;
+    overflow: hidden;
+    box-shadow: none !important;
+    background: none !important;
+  }
+  .tab-list-wrapper {
+    padding: 4px;
+  }
+
+  .tab-list {
+    li {
+      label,
+      > a {
+        margin: 1px 2px !important;
+        border-radius: 6px !important;
+        padding: 12px !important;
+        @extend %reset;
+
+        &:hover {
+          @extend %reset;
+          @include color("secondary-1", $lightness: 5%) using ($color) {
+            background: $color !important;
+          }
+        }
+        &:active {
+          @include color("secondary-1", $lightness: 10%) using ($color) {
+            background: $color !important;
+          }
+        }
+      }
+
+      &:checked,
+      &.selected {
+        label,
+        > a {
+          @extend %reset;
+          @include color("link-1") using ($color) {
+            background: $color !important;
+          }
+          color: rgba(black, .7);
+
+          &:hover {
+            @extend %reset;
+            @include color("link-1", $lightness: 20%) using ($color) {
+              background: $color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#post-content input#editor-poll:checked~.tab-list-wrapper li#editor-tab-poll,
+#post-content input#editor-bbcode:checked~.tab-list-wrapper li#editor-tab-bbcode,
+#main-content input#featured-submission-8:checked~.tab-list-wrapper li#featured-submission-tab-8,
+#main-content input#featured-submission-7:checked~.tab-list-wrapper li#featured-submission-tab-7,
+#main-content input#featured-submission-6:checked~.tab-list-wrapper li#featured-submission-tab-6,
+#main-content input#featured-submission-5:checked~.tab-list-wrapper li#featured-submission-tab-5,
+#main-content input#featured-submission-4:checked~.tab-list-wrapper li#featured-submission-tab-4,
+#main-content input#featured-submission-3:checked~.tab-list-wrapper li#featured-submission-tab-3,
+#main-content input#featured-submission-2:checked~.tab-list-wrapper li#featured-submission-tab-2,
+#main-content input#featured-submission-1:checked~.tab-list-wrapper li#featured-submission-tab-1,
+#main-content input#new-submission-8:checked~.tab-list-wrapper li#new-submission-tab-8,
+#main-content input#new-submission-7:checked~.tab-list-wrapper li#new-submission-tab-7,
+#main-content input#new-submission-6:checked~.tab-list-wrapper li#new-submission-tab-6,
+#main-content input#new-submission-5:checked~.tab-list-wrapper li#new-submission-tab-5,
+#main-content input#new-submission-4:checked~.tab-list-wrapper li#new-submission-tab-4,
+#main-content input#new-submission-3:checked~.tab-list-wrapper li#new-submission-tab-3,
+#main-content input#new-submission-2:checked~.tab-list-wrapper li#new-submission-tab-2,
+#main-content input#new-submission-1:checked~.tab-list-wrapper li#new-submission-tab-1,
+#editprofile-content input#profile-admin:checked~.tab-list-wrapper li#profile-tab-admin,
+#editprofile-content input#profile-options:checked~.tab-list-wrapper li#profile-tab-options,
+#editprofile-content input#profile-theme:checked~.tab-list-wrapper li#profile-tab-theme,
+#editprofile-content input#profile-layout:checked~.tab-list-wrapper li#profile-tab-layout,
+#editprofile-content input#profile-contact:checked~.tab-list-wrapper li#profile-tab-contact,
+#editprofile-content input#profile-personal:checked~.tab-list-wrapper li#profile-tab-personal,
+#editprofile-content input#profile-appearance:checked~.tab-list-wrapper li#profile-tab-appearance,
+#editprofile-content input#profile-general:checked~.tab-list-wrapper li#profile-tab-general,
+#post-content input#editor-bbcode:checked~.tab-list-wrapper li#editor-tab-bbcode {
+
+  background: none !important;
+
+  >label {
+    @include color("secondary-2", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+    font-weight: normal !important;
+
+    &:hover {
+      @extend %reset;
+      @include color("secondary-2", $lightness: -10%) using ($color) {
+        background: $color !important;
+      }
+    }
+  }
+}
+
+
+
+// submission details
+#submission-details table.list td {
+  line-height: 21px;
+}
+
+#submission-details table.list td:last-child {
+  padding-right: 32px;
+}
+
+// page list
+.page-list + .content {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-list {
+  li {
+    border:none !important;
+    &.active {
+      border-radius: 4px !important;
+    }
+  }
+}
+
+// box
+.box {
+  @extend %box;
+  border: none;
+  padding: 3px;
+
+  > .content {
+    @include color("secondary-2", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+    box-shadow: none !important;
+    border-radius: 4px !important;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 0.9rem !important;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 0.83rem !important;
+  }
+}
+
+article.box {
+  padding: 3px !important;
+}
+
+.content + header {
+  margin-top: -8px;
+}
+
+#viewforum-content .forum-view .content:first-child {
+  margin-top: 10px;
+}
+
+// Tables
+table.list {
+  th {
+    @include color("secondary-2", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+  }
+  th, td {
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+tr.separator > td {
+  box-shadow: none !important;
+}
+
+table.table:not(.nonconsecutive),
+table.list.nonconsecutive {
+  tbody {
+    tr:nth-child(even),
+    tr.even {
+      th, td {
+        background-color:rgba(255,255,255,.02) !important;
+      }
+    }
+  }
+}
+
+.content.has-table:first-child {
+  margin-top: 8px;
+}
+
+.quote,
+.code {
+  border-radius: 4px !important;
+  border-width: 0;
+  padding: 3px;
+  box-shadow: 0 2px 2px 0px rgba(black, 0.10),
+                0 4px 4px 2px rgba(black, 0.05),
+                inset 0 0 0 1px rgba(white,0.1) !important;
+  .box {
+    @extend %reset;
+    border-radius: 1px !important;
+  }
+
+  .boxhead {
+    @include color("font", $lightness: -15%) using ($color) {
+      color: $color !important;
+    }
+    > a {
+      color: color("link-2") !important;
+    }
+  }
+}
+
+.code {
+  .box {
+    @include color("primary-1", $lightness: 10%) using ($color) {
+      background: $color !important;
+    }
+  }
+}
+
+.quote {
+  .box {
+    @include color("secondary-2", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+  }
+}
+
+textarea {
+  font-size: 14px;
+}
+
+
+.collapsed-content {
+  padding: 8px 12px !important;
+  border-left-color: rgba(255, 255, 255, 0.4);
+}
+
+#user-list {
+
+  @include color("secondary-2", $lightness: -20%) using ($color) {
+    background: $color !important;
+  }
+
+  box-shadow: 0 2px 2px 0px rgba(black, 0.10),
+              0 4px 4px 2px rgba(black, 0.05),
+              inset 0 0 0 1px rgba(white,0.1);
+  border-radius: 4px;
+  margin: 6px;
+  padding: 12px;
+}
+
+// actions
+%user_action {
+  background: color("link-1") !important;
+  color: rgba(black, 0.5) !important;
+
+  &:hover {
+    @include color("link-1", $lightness: 20%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &:active {
+    @include color("link-1", $lightness: -10%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &:disabled {
+    @include color("link-1", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+    filter: grayscale(80%) opacity(80%);
+  }
+}
+
+%staff_action {
+  background: color("accent-2") !important;
+  color: white !important;
+
+  &:hover {
+    @include color("accent-2", $lightness: 20%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &:active {
+    @include color("accent-2", $lightness: -10%) using ($color) {
+      background: $color !important;
+    }
+  }
+
+  &:disabled {
+    color: rgba(white, 0.6) !important;
+    @include color("accent-2", $lightness: -20%) using ($color) {
+      background: $color !important;
+    }
+    filter: grayscale(80%) opacity(80%);
+  }
+}
+
+%box {
+  border-radius: 9px;
+  box-shadow: 0 2px 2px 0px rgba(black, 0.10),
+              0 4px 4px 2px rgba(black, 0.05),
+              inset 0 0 0 1px rgba(white,0.1);
+}
+
+
+@media screen and (max-width: 960px) {
+  #main-menu .box {
+    border-radius: 0px;
+    box-shadow:none;
+  }
+
+
+  .header-textbox {
+    width: calc(100% - 12px) !important;
+    margin: 6px !important;
+  }
+}
