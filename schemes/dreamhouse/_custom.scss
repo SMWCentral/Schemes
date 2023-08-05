@@ -618,7 +618,8 @@ time,
 }
 
 // tags
-.tag {
+#section-details-content .tag,
+#section-details-content a.tag {
   background: color("secondary-1") !important;
   color: white !important;
   font-weight: bold !important;
@@ -678,12 +679,12 @@ time,
   }
 
   h2 {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 0.9rem !important;
   }
 
   h3 {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 0.83rem !important;
   }
 }
