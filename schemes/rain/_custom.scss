@@ -1,0 +1,199 @@
+// "Rain" scheme
+// Author: Tahixham
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    background: url(https://bin.smwcentral.net/u/5315/rainbg.jpg) #171B27;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#main {
+
+    background-image: none !important;
+    background-color: rgba(0,0,0,0) !important; /* "none" didn't work */
+    border: none !important;
+    box-shadow: none !important;
+
+}
+
+*:not(#user-menu *) {
+    line-height: normal !important;
+}
+
+.menu-section ul a {
+    color: var(--link-2) !important;
+}
+.menu-section ul > li {
+    color: #656565;
+}
+
+#user-menu > ul li li:not(#logout-link) a:hover {
+    border-color: var(--accent-2);
+}
+#user-menu {
+    box-shadow: 0px 0px 2px rgba(0,0,0,.3) !important;
+}
+
+
+table.brdr td .title, table.generic td.header, table.table th, table.list th {
+    background: var(--primary-2);
+}
+
+header#header .header-textbox {
+    background: var(--secondary-2);
+}
+
+
+.box, #getting-started, #footer, #user-list, .header-textbox, #main-menu~div > p, #main > div > .top-line, #main-menu~div > p, #top-menu .top-line, #bottom-menu .top-line, #main-menu~div > h1~div[style] /* Only logical way I can find to style section descriptions ... */ {
+    box-shadow: 0 4px 4px rgba(255,255,255,.13) inset, 2px 2px 2px rgba(0,0,0,.3) !important;
+    border: 1px solid var(--primary-1);
+    border-radius: 3px;
+}
+#header {
+    box-shadow: 2px 2px 3px rgba(0,0,0,.3) !important;
+}
+
+.content {
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset !important;
+    background: var(--primary-2) !important;
+}
+#footer, #user-list, #getting-started {
+    background: var(--secondary-2) !important;
+}
+#user-list {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#user-list, #footer {
+    border-radius: 3px;
+}
+#footer {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+}
+h3.title {
+    color: var(--accent-1) !important
+}
+
+.box {
+    background: var(--secondary-2);
+    background: linear-gradient(180deg, var(--secondary-1) 0%, var(--secondary-2) 64px) !important;
+}
+.header-shading {
+    border-bottom: 1px solid var(--primary-2) !important;
+    background: linear-gradient(0deg, var(--primary-2) 0%, var(--secondary-2) 100%) !important;
+    opacity: .5;
+}
+
+.final-step input[name="submit"], .final-step input[name="save"].submit, .final-step input[name="login"].submit, .final-step input[name="confirm"].submit, .final-step input[name="submit"]:hover, .final-step input[name="save"].submit:hover, .final-step input[name="login"].submit:hover, .final-step input[name="confirm"].submit:hover, .final-step input[name="submit"]:active, .final-step input[name="save"].submit:active, .final-step input[name="login"].submit:active, .final-step input[name="confirm"].submit:active {
+    color: var(--link-1) !important;
+}
+input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], textarea, .form-multi {
+    background-color: var(--primary-2-l-15) !important;
+}
+
+
+h1.site, h1.smw, h1.yi, h1.sm64, h1.success, h1.failure {
+    text-shadow: 1px 1px 2px rgba(0,0,0,.64);
+}
+
+#main-menu~div > p, #main > div > .top-line, #top-menu .top-line, #bottom-menu .top-line, #main-menu~div > h1~div[style] {
+    background: var(--secondary-1); 
+    text-shadow: 1px 1px 0.5px rgba(0,0,0,.35);   
+    padding: 10px 8px !important;
+}
+.button, input[type="submit"] {
+    background: linear-gradient(0deg, var(--primary-1) 0%, var(--secondary-2) 100%) !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,.15) !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+.button:hover, input[type="submit"]:hover:not(:disabled) {
+    box-shadow: 0 0 3px rgba(0,0,0,.5) inset !important;
+}
+.button:active, input[type="submit"]:active:hover:not(:disabled) {
+    border-color: rgba(0,0,0,.2) !important;
+    box-shadow: 0 0 6px rgba(0,0,0,.75) inset !important;
+}
+input[type="submit"]:disabled {
+    opacity: .5;
+}
+li.title {
+    color: var(--font) !important;
+}
+.action:not(.staff), .button.action:not(.staff) {
+    color: var(--accent-2-l60) !important;
+}
+.action.staff {
+    color: var(--accent-1) !important;
+}
+
+
+
+.header-shading {
+    border-bottom: 1px solid var(--primary-2) !important;
+    background: url(https://bin.smwcentral.net/u/5315/rainbg.jpg) !important;
+    opacity: .6;
+}
+.header-background {
+    filter: grayscale(70%) blur(2.5px) !important;
+}
+
+#post-content input#editor-poll:checked~.tab-list-wrapper li#editor-tab-poll,
+#post-content input#editor-bbcode:checked~.tab-list-wrapper li#editor-tab-bbcode,
+#main-content input#featured-submission-8:checked~.tab-list-wrapper li#featured-submission-tab-8,
+#main-content input#featured-submission-7:checked~.tab-list-wrapper li#featured-submission-tab-7,
+#main-content input#featured-submission-6:checked~.tab-list-wrapper li#featured-submission-tab-6,
+#main-content input#featured-submission-5:checked~.tab-list-wrapper li#featured-submission-tab-5,
+#main-content input#featured-submission-4:checked~.tab-list-wrapper li#featured-submission-tab-4,
+#main-content input#featured-submission-3:checked~.tab-list-wrapper li#featured-submission-tab-3,
+#main-content input#featured-submission-2:checked~.tab-list-wrapper li#featured-submission-tab-2,
+#main-content input#featured-submission-1:checked~.tab-list-wrapper li#featured-submission-tab-1,
+#main-content input#new-submission-8:checked~.tab-list-wrapper li#new-submission-tab-8,
+#main-content input#new-submission-7:checked~.tab-list-wrapper li#new-submission-tab-7,
+#main-content input#new-submission-6:checked~.tab-list-wrapper li#new-submission-tab-6,
+#main-content input#new-submission-5:checked~.tab-list-wrapper li#new-submission-tab-5,
+#main-content input#new-submission-4:checked~.tab-list-wrapper li#new-submission-tab-4,
+#main-content input#new-submission-3:checked~.tab-list-wrapper li#new-submission-tab-3,
+#main-content input#new-submission-2:checked~.tab-list-wrapper li#new-submission-tab-2,
+#main-content input#new-submission-1:checked~.tab-list-wrapper li#new-submission-tab-1,
+#editprofile-content input#profile-admin:checked~.tab-list-wrapper li#profile-tab-admin,
+#editprofile-content input#profile-options:checked~.tab-list-wrapper li#profile-tab-options,
+#editprofile-content input#profile-theme:checked~.tab-list-wrapper li#profile-tab-theme,
+#editprofile-content input#profile-layout:checked~.tab-list-wrapper li#profile-tab-layout,
+#editprofile-content input#profile-contact:checked~.tab-list-wrapper li#profile-tab-contact,
+#editprofile-content input#profile-personal:checked~.tab-list-wrapper li#profile-tab-personal,
+#editprofile-content input#profile-appearance:checked~.tab-list-wrapper li#profile-tab-appearance,
+#editprofile-content input#profile-general:checked~.tab-list-wrapper li#profile-tab-general,
+#post-content input#editor-bbcode:checked~.tab-list-wrapper li#editor-tab-bbcode {
+    /* Thanks Amper I copied this from Barbie :) */
+    > label, > label:hover {
+        background: var(--primary-2) !important;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1) inset !important;
+    }
+    
+}
+.tab-list li.selected a {
+    background: var(--primary-2) !important;
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset !important;
+}
+
+.quote > .box, .code > .box {
+    border: 0 !important;
+	background: var(--primary-2) !important;
+    box-shadow: none !important;
+}
+.code {
+    background: #2A492E !important; /* Hardcoded Colour! */
+}
+
+
+.header-logo {
+    content: url(https://bin.smwcentral.net/u/5315/RainBanner.png&key=qt4RxTNS);
+}
