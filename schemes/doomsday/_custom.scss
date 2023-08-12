@@ -4,9 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 body {
-    background: url(https://bin.smwcentral.net/u/5315/bg%255B1%255D.png) #BEA76D; 
+    background: url(/assets/images/schemes/doomsday/bg.png) #BEA76D; 
     font: 14px / 150% 'Noto Sans', sans-serif;
 }
+
+
+.un {
+	font-weight: bold;
+} /* 2023-08-12: Username Fix */
+#viewforum-content .forum-list td.forum h3, #viewforum-content .thread-list td.thread h3 {
+	font-weight: normal;
+} /* 2023-08-12: Forum Name Fix - copied from default scheme */
 
 #main {
 
@@ -97,6 +105,10 @@ h1.site::before, h1.smw::before, h1.yi::before, h1.sm64::before, .header-logo, .
     border: 2px solid rgba(255,255,255,.15) !important;
     border-radius: 3px !important;
     box-shadow: none !important;
+    vertical-align: middle; /* 2023-08-12: Button text vertical pos fix */
+}
+input[type="submit"]:first-of-type { 
+    padding: 6px 12px !important; /* 2023-08-12: Button text vertical pos fix */
 }
 .button:hover, input[type="submit"]:hover:not(:disabled) {
     box-shadow: 0 0 3px rgba(0,0,0,.5) inset !important;
@@ -169,5 +181,5 @@ li.title {
 
 
 .header-logo {
-    content: url(https://cdn.discordapp.com/attachments/623593567171903499/1132399015372275822/doomsday3.png);
+    content: url(/assets/images/schemes/doomsday/logo.png);
 }
