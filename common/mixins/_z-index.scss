@@ -1,0 +1,46 @@
+@use "sass:map";
+
+$z-indexes: (
+	content: (
+		menu: 1000,
+		table: 1001,
+	),
+	header: (
+		background: 2000,
+		shading: 2001,
+		logo: 2002,
+		boxes: 2003,
+		textbox: 2004,
+		levelname: 2005,
+	),
+	"spc-player": 3000,
+	"nag-notice": 4000,
+	"user-menu": (
+		default: 5000,
+		submenu: 5001,
+	),
+	"mobile-menu": 6000,
+	"top-bar": 7000,
+	dialog: (
+		scrim: 8000,
+		body: 8001,
+	),
+) !default;
+
+@function z($group, $key: null) {
+	@if not map.has-key($z-indexes, $group) {
+		@error "#{$group} is not a valid z-index group.";
+	}
+
+	$group-map: map.get($z-indexes, $group);
+
+	@if $key == null {
+		@return $group-map;
+	}
+
+	@if not map.has-key($group-map, $key) {
+		@error "#{$group}.#{$key} is not a valid z-index key.";
+	}
+
+	@return map.get($group-map, $key);
+}

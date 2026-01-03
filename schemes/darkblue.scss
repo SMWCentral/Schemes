@@ -1,0 +1,92 @@
+// "Dark Blue" scheme
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+
+// Import Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+// Scheme Defines
+:root {
+	// SCHEME FONTS
+	--font: "Roboto", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: none;
+	--main-bg-image: url("/assets/images/background-dark.png");
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 3px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 0;
+	--tab-corner-radius: 3px;
+
+	// margins
+	--tab-view-margins: 8px;
+
+	// gaps
+	--tab-view-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #293b57;
+	--view-bg: #0f1e32;
+	--menu-bg: #0f1e32;
+	--body-bg: #041027;
+	--button-bg: #3f577d;
+	--tab-bg: #3f577d;
+	--action-bar-bg: rgba(125, 174, 253, 0.06);
+	--code-bg: #1a273f;
+
+	// text colors
+	--text: #ddd;
+	--link-1: #f9c928;
+	--link-2: #0077ff;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #e96464;
+	--focus-ring: #3b4d6b;
+	--suggested: #f9c928;
+	--success: #92db00;
+	--info: #193354;
+	--warning: #c22c2c;
+	--new: #ffd556;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.2);
+	--inset-shadow: rgba(0, 0, 0, 0.1);
+	--text-shadow: #222;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.1);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 90%);
+	--box-border: transparent;
+	--content-box-border: var(--box-bg);
+	--button-border: transparent;
+	--action-bar-border: rgba(200, 217, 246, 0.1);
+}

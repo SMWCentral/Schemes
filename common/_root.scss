@@ -1,0 +1,94 @@
+// CONFIG
+$light: false !default;
+$dark: false !default;
+
+// CONSTANTS
+@mixin const {
+	// heights
+	--header-height: 224px;
+	--user-menu-height: 32px;
+	--user-menu-mobile-height: 48px;
+
+	// widths
+	--logo-width: 400px;
+	--main-menu-width: 220px;
+	--page-content-width: 1440px;
+	--page-content-width-wide: 1920px;
+
+	// margins
+	--base-desktop-padding: 20px;
+	--base-mobile-padding: 12px;
+	--symbolic-icon-padding: 24px;
+
+	// gaps
+	--main-content-gap: 24px;
+	--main-content-gap-mobile: 18px;
+
+	// icon sizes
+	--icon-size-large: 32px;
+	--icon-size-small: 16px;
+	--icon-size-tiny: 10px;
+}
+
+// GLOBAL
+@mixin global-styles {
+	--darken: black;
+	--lighten: white;
+
+	--spacer-visibility: hidden;
+}
+
+// FONT MIXIN
+@mixin font-sizes {
+	--font-size-base: 0.875rem; /* 14px */
+
+	--font-size-large: calc(var(--font-size-base) * (16 / 14));
+	--font-size-small: calc(var(--font-size-base) * (13 / 14));
+	--font-size-smaller: calc(var(--font-size-base) * (12 / 14));
+	--font-size-xs: calc(var(--font-size-base) * (11 / 14));
+
+	--font-size-h1: calc(var(--font-size-base) * (32 / 14));
+	--font-size-h2: calc(var(--font-size-base) * (16 / 14));
+	--font-size-h3: var(--font-size-large);
+	--font-size-h4: var(--font-size-base);
+}
+
+// LIGHT THEME MIXINS
+@mixin light-theme {
+	// text-colors
+	--dim-text: color-mix(in srgb, currentColor, transparent 25%);
+	--dimmer-text: color-mix(in srgb, currentColor, transparent 10%);
+
+	// background colors
+	--main-bg: var(--view-bg);
+	--tag-bg: color-mix(in srgb, var(--text), transparent 93%);
+	--aside-bg: color-mix(in srgb, var(--body-bg), var(--link-1) 2%);
+	--input-bg: color-mix(in srgb, var(--body-bg), white 80%);
+
+	// button gradient
+	--button-gradient-top: rgba(255, 255, 255, 0.03);
+	--button-gradient-bottom: rgba(0, 0, 0, 0.06);
+
+	// mix colors
+	--hover-mix: #000000e0;
+}
+
+// DARK THEME MIXINS
+@mixin dark-theme {
+	// text-colors
+	--dim-text: color-mix(in srgb, currentColor, transparent 25%);
+	--dimmer-text: color-mix(in srgb, currentColor, transparent 10%);
+
+	// background colors
+	--main-bg: var(--view-bg);
+	--tag-bg: color-mix(in srgb, var(--text), transparent 80%);
+	--aside-bg: color-mix(in srgb, var(--box-bg), var(--link-1) 17%);
+	--input-bg: color-mix(in srgb, var(--body-bg), black 20%);
+
+	// button gradient
+	--button-gradient-top: rgba(255, 255, 255, 0.11);
+	--button-gradient-bottom: rgba(0, 0, 0, 0.2);
+
+	// mix colors
+	--hover-mix: white;
+}

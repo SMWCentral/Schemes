@@ -1,5 +1,0 @@
-:root {
-	@each $name, $color in $palette {
-		--#{$name}: #{$color};
-	}
-}

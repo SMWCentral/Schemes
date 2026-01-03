@@ -1,0 +1,139 @@
+// "Dream House" scheme
+// Author: AmperSam
+
+@use "root" with (
+	// set palette
+	$light: true
+);
+@use "shared";
+@use "mixins";
+
+// Import Font
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+
+:root {
+	// SCHEME FONTS
+	--font: "Raleway", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: url("/assets/images/schemes/dreamhouse/dots.png");
+	--main-bg-image: none;
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 9px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 5px;
+	--tab-corner-radius: 7px;
+
+	// margins
+	--tab-view-margins: 4px;
+
+	// gaps
+	--tab-view-gap: 0;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #fed5eb;
+	--view-bg: #fff1f9;
+	--menu-bg: #fff;
+	--body-bg: #fff1f9;
+	--button-bg: #fffafd;
+	--tab-bg: #fff;
+	--action-bar-bg: #ffffffea;
+	--code-bg: #fff;
+
+	// text colors
+	--text: black;
+	--link-1: #269ed2;
+	--link-2: #ba5aed;
+	--admin: #e93737;
+
+	// named colors
+	--accent: #4fcaff;
+	--focus-ring: #ff8d4f;
+	--suggested: #25ade7;
+	--success: #92db00;
+	--info: #fff;
+	--warning: #e24d59;
+	--new: #ffd556;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.05);
+	--inset-shadow: transparent;
+	--text-shadow: rgba(255, 255, 255, 0.3);
+
+	// outlines and borders
+	--inset-highlight: hsla(0, 0%, 100%, 0.8);
+
+	// borders
+	--border: #fed5eb;
+	--box-border: #fda7d5;
+	--content-box-border: transparent;
+	--button-border: rgba(86, 33, 61, 0.13);
+	--action-bar-border: rgba(86, 33, 61, 0.1);
+}
+
+// remove shading on main
+#main {
+	background-color: transparent;
+	border: none;
+}
+
+#footer {
+	background-color: var(--menu-bg);
+}
+
+// make user list floating
+#user-list {
+	@include mixins.container-box-style;
+	margin: 8px 0;
+	background-color: var(--menu-bg);
+	border-color: var(--border);
+}
+
+#main-content #getting-started {
+	@include mixins.container-box-style;
+	box-shadow:
+		0 2px 2px 0px var(--drop-shadow),
+		0 4px 4px 2px var(--drop-shadow),
+		inset 0 1px 0 0 var(--inset-highlight);
+}
+
+#footer {
+	box-shadow:
+		inset 0 1px 2px 0 var(--drop-shadow),
+		inset 0 2px 4px 2px var(--drop-shadow);
+}
+
+.box {
+	box-shadow:
+		0 2px 2px 0px var(--drop-shadow),
+		0 4px 4px 2px var(--drop-shadow),
+		inset 0 1px 0 0 var(--inset-highlight);
+}
+
+.tab-list-wrapper li > label {
+	margin: 2px;
+	&.selected {
+		box-shadow: 0 1px 2px 0px var(--drop-shadow);
+	}
+}

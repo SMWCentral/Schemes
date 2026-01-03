@@ -1,0 +1,41 @@
+@use "sass:list";
+@use "./theme";
+
+@mixin pixelated() {
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
+
+@mixin symbolic-icon() {
+	opacity: 0.5;
+	filter: drop-shadow(0 1px 0 var(--text-shadow));
+
+	@include theme.light-mode-only {
+		filter: invert(1) drop-shadow(0 1px 0 var(--text-shadow));
+	}
+}
+
+@mixin icon($size, $image, $position: null, $side: "left") {
+	@if list.index($side, "left") == null and list.index($side, "right") == null {
+		@error "Side must have left or right, received only #{$side}";
+	}
+
+	position: relative;
+
+	&#{if(sass(list.index($side, "left") != null): ":before"; else: ":after")} {
+		content: "";
+		width: $size;
+		height: $size;
+		position: absolute;
+		#{if(sass(list.index($side, "left") != null): "left"; else: "right")}: 0;
+		background: url("/assets/images/icons/#{$image}") #{$position} no-repeat;
+
+		@if list.index($side, "top") != null {
+			top: 0;
+		} @else {
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+	}
+}

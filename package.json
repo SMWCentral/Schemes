@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "description": "SMWC2 Schemes",
   "scripts": {
-    "build": "node build.js"
+    "build": "sass --embed-source-map --no-charset --load-path=common"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "dependencies": {
-    "sass": "^1.52.3"
-  },
-  "devDependencies": {
-    "cross-spawn": "^7.0.3"
+		"sass-embedded": "~1.97.0"
   }
 }

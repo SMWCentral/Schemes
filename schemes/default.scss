@@ -1,0 +1,145 @@
+// Default site scheme
+
+@use "shared";
+@use "mixins";
+
+// Import Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+// Scheme Defines
+:root {
+	// SCHEME FONTS
+	--font: "Roboto", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: none;
+	--main-bg-image: url("/assets/images/background-light.png");
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 3px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 0;
+	--tab-corner-radius: 4px;
+
+	// margins
+	--tab-view-margins: 8px;
+
+	// gaps
+	--tab-view-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: hsl(180, 2%, 99%);
+	--view-bg: hsl(180, 7%, 96%);
+	--menu-bg: #fff;
+	--body-bg: #fff;
+	--button-bg: #fff;
+	--tab-bg: hsla(210, 20%, 42%, 0.12);
+	--action-bar-bg: rgba(59, 81, 117, 0.06);
+	--code-bg: #fff;
+
+	// text colors
+	--text: #000521;
+	--link-1: #4590f3;
+	--link-2: #f47b2f;
+	--admin: #df37a2;
+
+	// named colors
+	--accent: #ee8866;
+	--focus-ring: #8fb7ef;
+	--suggested: #286cc4;
+	--success: #90c428;
+	--info: hsl(180, 7%, 96%);
+	--warning: #d24343;
+	--new: #ecb923;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.05);
+	--inset-shadow: rgba(0, 0, 0, 0.02);
+	--text-shadow: rgba(255, 255, 255, 0.3);
+
+	// highlights
+	--inset-highlight: rgba(0, 0, 0, 0.04);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 87%);
+	--box-border: transparent;
+	--content-box-border: var(--box-bg);
+	--button-border: color-mix(in srgb, var(--button-bg), var(--lighten) 5%);
+	--action-bar-border: rgba(59, 81, 117, 0.1);
+}
+
+@include mixins.dark-mode-only {
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: "none";
+	--main-bg-image: url("/assets/images/background-dark.png");
+	--footer-bg-image: "none";
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #3f3f45;
+	--view-bg: #1d1e25;
+	--menu-bg: #1d1e26;
+	--body-bg: #121417;
+	--button-bg: #424957;
+	--tab-bg: #585862;
+	--action-bar-bg: rgba(252, 252, 252, 0.06);
+	--code-bg: #121417;
+
+	// text colors
+	--text: #ddd;
+	--link-1: #abc8ef;
+	--link-2: #f79f6a;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #f3ac94;
+	--focus-ring: #8fb7ef;
+	--suggested: #8fb7ef;
+	--success: #92db00;
+	--info: #30323f;
+	--warning: #c22c2c;
+	--new: #ffd556;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.2);
+	--inset-shadow: rgba(0, 0, 0, 0.1);
+	--text-shadow: #222;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.1);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 88%);
+	--box-border: transparent;
+	--content-box-border: var(--box-bg);
+	--button-border: color-mix(in srgb, var(--button-bg), var(--lighten) 10%);
+	--action-bar-border: rgba(252, 252, 252, 0.1);
+}

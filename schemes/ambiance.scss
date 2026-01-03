@@ -1,0 +1,114 @@
+// "Ambiance" scheme
+// Author: AmperSam
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+@use "mixins";
+
+// Import Font
+@import "https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap";
+
+:root {
+	// SCHEME FONTS
+	--font: "Rubik", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: none;
+	--main-bg-image: none;
+	--footer-bg-image: url("/assets/images/background-dark.png");
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 8px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 4px;
+	--tab-corner-radius: 3px;
+
+	// margins
+	--tab-view-margins: 8px;
+
+	// gaps
+	--tab-view-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #3f3f45;
+	--view-bg: #2c2c31;
+	--menu-bg: #323237;
+	--body-bg: #272527;
+	--button-bg: #515158;
+	--tab-bg: #515158;
+	--action-bar-bg: rgba(249, 249, 249, 0.06);
+	--code-bg: #262527;
+
+	// text colors
+	--text: #f5f6f7;
+	--link-1: #abcdef;
+	--link-2: #efb0ab;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #ffaccf;
+	--focus-ring: #abcdef;
+	--suggested: #abcdef;
+	--success: #92db00;
+	--info: rgba(20, 19, 20, 0.7);
+	--warning: #c22c2c;
+	--new: #e4ae68;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.2);
+	--inset-shadow: transparent;
+	--text-shadow: #222;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.1);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 90%);
+	--box-border: rgba(255, 255, 255, 0.1);
+	--content-box-border: rgba(255, 255, 255, 0.15);
+	--button-border: color-mix(in srgb, var(--button-bg), white 10%);
+	--action-bar-border: rgba(249, 249, 249, 0.1);
+}
+
+// remove shading on main
+#main {
+	background-color: transparent;
+	border-top: none;
+}
+
+// make user list floating
+#user-list {
+	@include mixins.container-box-style;
+	margin-top: 10px;
+}
+
+#header .header-levelname,
+#header .header-textbox {
+	box-shadow: none;
+
+	@include mixins.mobile {
+		background-color: var(--menu-bg);
+	}
+}

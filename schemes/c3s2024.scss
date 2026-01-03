@@ -1,0 +1,679 @@
+// "SMWCities" scheme
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+@use "mixins";
+
+// Scheme Defines
+:root {
+	// SCHEME FONTS
+	--font: "Times New Roman", Times, serif;
+	--font-monospace: "Courier New", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: url("/assets/images/schemes/c3s2024/bubbles.png");
+	--main-bg-image: none;
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: url("/assets/images/schemes/c3s2024/header.png");
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 0;
+	--button-corner-radius: 0;
+	--content-border-radius: 0;
+	--tab-corner-radius: 0;
+
+	// margins
+	--tab-view-margins: 0;
+
+	// gaps
+	--tab-view-gap: 0;
+	--box-gap: 0;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 12px;
+	--button-padding: 2px 8px;
+	--table-cell-padding: 5px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: transparent;
+	--view-bg: transparent;
+	--menu-bg: transparent;
+	--body-bg: #000;
+	--button-bg: #000;
+	--tab-bg: transparent;
+	--action-bar-bg: transparent;
+	--code-bg: #000;
+
+	// text colors
+	--text: #fff;
+	--link-1: #0000ff;
+	--link-2: #00ff00;
+	--admin: #ff00ff;
+
+	// named colors
+	--accent: #ffff00;
+	--focus-ring: #00ffff;
+	--suggested: #00ffff;
+	--success: #00ff00;
+	--info: #000;
+	--warning: red;
+	--new: #ffff00;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: transparent;
+	--inset-shadow: transparent;
+	--text-shadow: transparent;
+
+	// highlight
+	--inset-highlight: transparent;
+
+	// borders
+	--border: white;
+	--box-border: var(--border);
+	--content-box-border: transparent;
+	--button-border: #999;
+	--action-bar-border: var(--border);
+
+	// OVERRIDES
+	--font-size-h2: 24px !important;
+
+	// extra colors
+	--link-3: #fff;
+}
+
+// SCHEME OVERRIDES
+
+// Scheme Styles
+
+%magenta_box {
+	background: url("/assets/images/schemes/c3s2024/night.png");
+	border: 6px ridge magenta;
+}
+
+%lime_box {
+	background: url("/assets/images/schemes/c3s2024/night.png");
+	border: 6px ridge lime;
+}
+
+%cyan_box {
+	background: url("/assets/images/schemes/c3s2024/rocky.png");
+	border: 6px ridge cyan;
+}
+
+%yellow_box {
+	background: url("/assets/images/schemes/c3s2024/blue-stars.png");
+	border: 6px ridge yellow;
+}
+
+// remove shadows
+* {
+	text-shadow: none;
+	box-shadow: none;
+}
+
+// override opacity effect on inline icons
+*:before {
+	opacity: 1 !important;
+}
+
+// override background image effect on links
+a:hover {
+	background-image: none !important;
+}
+
+// top bar
+#top-bar {
+	border-bottom: 1px solid var(--border);
+	background: url("/assets/images/schemes/c3s2024/stars.png");
+
+	#user-menu {
+		background: url("/assets/images/schemes/c3s2024/stars.png");
+		border-bottom: 1px solid var(--border);
+
+		#user-submenu {
+			#logout-link > a {
+				color: var(--warning);
+				font-weight: bold;
+				&:hover {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	#user-menu,
+	#language-select {
+		.submenu {
+			@extend %yellow_box;
+
+			li.active a {
+				box-shadow: none;
+			}
+			li a:hover {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+// site header
+#header {
+	.header-levelname,
+	.header-textbox {
+		background-image: url("/assets/images/schemes/c3s2024/red-stars.png");
+		font-weight: bold;
+		border: 3px double;
+		border-color: red yellow green blue;
+	}
+}
+
+// user list
+#user-list {
+	@extend %lime_box;
+	border-width: 4px;
+	margin-top: 20px;
+}
+
+// main main
+#main-menu {
+	.box {
+		@extend %lime_box;
+		padding: 0;
+
+		.content {
+			background: url("/assets/images/schemes/c3s2024/night.png");
+			border: none;
+		}
+	}
+
+	.menu-section {
+		ul li:not(.spacer) {
+			background: url("/assets/images/schemes/classic/question-block.gif") center left no-repeat;
+			padding-left: 20px;
+
+			a:visited {
+				color: var(--link-3);
+			}
+		}
+	}
+}
+
+// forums content
+#viewforum-content {
+	.box {
+		background: none;
+		border: none;
+		padding: 0;
+
+		h2 {
+			@extend %yellow_box;
+		}
+
+		.content {
+			border: 6px ridge orange;
+			margin: 0;
+
+			&.has-table > table {
+				background: none;
+				border: none;
+			}
+		}
+	}
+
+	.tag {
+		background: darkblue;
+		border: 3px double yellow;
+		border-radius: 0;
+		height: 22px;
+	}
+}
+
+// main page container
+#main {
+	background: transparent;
+	border: none;
+}
+
+// main page
+#main-content {
+	#getting-started {
+		background: none;
+		border: 6px ridge;
+		border-color: red yellow green blue;
+	}
+
+	.box {
+		border: 6px ridge cyan;
+		background: rgba(0, 128, 128, 0.5);
+
+		.content {
+			@extend %magenta_box;
+			margin: 0;
+		}
+
+		&.news-articles {
+			.content {
+				margin: 6px 0;
+
+				h3,
+				.secondary-info {
+					padding-left: 0;
+				}
+
+				h3::before {
+					content: none;
+				}
+			}
+		}
+	}
+
+	#calendar > header h2::before {
+		background: url("/assets/images/schemes/c3s2024/icons/calendar.png");
+		ul li::before {
+			background: url("/assets/images/schemes/c3s2024/icons/smiley.png");
+		}
+	}
+
+	#recent-news > header h2::before {
+		background: url("/assets/images/schemes/c3s2024/icons/msg_information-2.png");
+	}
+
+	#new-submissions > header h2::before {
+		background: url("/assets/images/schemes/c3s2024/icons/channels-1.png");
+	}
+
+	#featured-submissions > header h2::before {
+		background: url("/assets/images/schemes/c3s2024/icons/note-1.png");
+	}
+}
+
+// profile content
+#profile-content {
+	.box {
+		background: none;
+		border: 6px ridge maroon;
+		padding: 0;
+
+		&.collapsible {
+			@extend %yellow_box;
+		}
+
+		&.post {
+			border-color: forestgreen;
+
+			.sidebar {
+				padding: 6px;
+			}
+		}
+
+		.content {
+			background: none;
+			margin: 0;
+		}
+	}
+}
+
+// section content
+#section-details-content {
+	.box:not(#bbcode-editor, #comments) {
+		background: none;
+		border: none;
+		padding: 0;
+
+		.content:not(.has-table) {
+			@extend %cyan_box;
+			margin: 0;
+		}
+
+		.content.has-table {
+			@extend %magenta_box;
+			margin: 0;
+			table {
+				background: none;
+			}
+		}
+	}
+
+	// download button
+	.buttons-section a.button:not(.preview-spc) {
+		background: darkgreen;
+		color: lime !important;
+		padding: 0px 12px 0px 12px;
+	}
+
+	.tag {
+		background: darkblue;
+		border: 3px double yellow;
+		border-radius: 0;
+		padding: 3px 5px;
+
+		svg {
+			display: none;
+		}
+		&::after {
+			content: none;
+		}
+	}
+}
+
+#section-list-content {
+	.box:not(.collapsible) {
+		border: none;
+		padding: 0;
+		margin: 0;
+
+		.content {
+			margin: 0;
+
+			&.has-table {
+				border: none;
+				margin: 12px;
+				> table {
+					background: none;
+				}
+			}
+		}
+	}
+
+	#list-content {
+		@extend %cyan_box;
+		margin-bottom: var(--main-content-gap);
+
+		.box {
+			background: none;
+		}
+	}
+}
+
+// site footer
+#footer {
+	border: none;
+	#footer-box::after {
+		content: url("/assets/images/schemes/c3s2024/ie4get_animated.gif");
+		padding-bottom: 4em;
+	}
+}
+
+// post editor
+#bbcode-editor {
+	@extend %magenta_box;
+	.content {
+		@extend %cyan_box;
+	}
+}
+
+// all other content
+[id="main-menu"] + [id$="-content"] {
+	h1::before {
+		content: none;
+		display: none;
+	}
+
+	.box {
+		@extend %magenta_box;
+
+		> h2,
+		> h3,
+		> header > h2,
+		> header > h3 {
+			width: 100% !important;
+		}
+
+		.content {
+			@extend %cyan_box;
+			margin: 12px;
+		}
+
+		&.collapsible {
+			@extend %yellow_box;
+			margin: 0;
+			padding: 0;
+
+			header h2 {
+				padding: 0 6px;
+			}
+		}
+	}
+
+	.post {
+		.content {
+			margin: 0;
+		}
+	}
+}
+
+// action bar
+.action-bar {
+	@extend %yellow_box;
+}
+
+// tables
+table.table,
+table.list {
+	background: none;
+	border: 6px ridge lightgrey;
+
+	> thead > tr > th {
+		background-color: darkblue;
+		font-weight: bold;
+	}
+}
+
+// links
+a {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+	&:link,
+	&:visited {
+		color: var(--link-3);
+	}
+}
+
+// final step & submit buttons
+.final-step {
+	input[name="submit"],
+	input[name="save"].submit {
+		background: darkgreen;
+		border-color: lime green green lime;
+		font-weight: normal;
+		color: lime !important;
+
+		&:hover,
+		&.submit:hover {
+			background: #004014;
+			border-color: green lime lime green;
+			color: lime !important;
+		}
+
+		&:active,
+		&:focus,
+		&.submit:active,
+		&.submit:focus {
+			background: darkblue;
+			border-color: olive yellow yellow olive;
+			color: white !important;
+		}
+	}
+}
+
+// submission header icons
+.submission {
+	&.smwmusic::before {
+		background: url("/assets/images/schemes/c3s2024/icons/midi_bl-0.png");
+	}
+
+	&.smwhacks::before,
+	&.yihacks::before,
+	&.sm64hacks::before {
+		background: url("/assets/images/schemes/c3s2024/icons/joystick-0.png");
+	}
+
+	&.sramdatabase::before {
+		background: url("/assets/images/schemes/c3s2024/icons/floppy_drive_5_25-1.png");
+	}
+
+	&.tools::before {
+		background: url("/assets/images/schemes/c3s2024/icons/tools_gear-1.png");
+	}
+
+	&.smwgraphics::before {
+		background: url("/assets/images/schemes/c3s2024/icons/image_old_gif-1.png");
+	}
+
+	&.brrsamples::before {
+		background: url("/assets/images/schemes/c3s2024/icons/loudspeaker_wave-1.png");
+	}
+
+	&.smwblocks::before {
+		background: url("/assets/images/schemes/c3s2024/icons/regedit-1.png");
+	}
+
+	&.smwsprites::before {
+		background: url("/assets/images/schemes/c3s2024/icons/smiley.png");
+	}
+
+	&.smwpatches::before {
+		background: url("/assets/images/schemes/c3s2024/icons/template_empty-3.png");
+	}
+
+	&.uberasm::before {
+		background: url("/assets/images/schemes/c3s2024/icons/executable_script-0.png");
+	}
+
+	&.documents::before {
+		background: url("/assets/images/schemes/c3s2024/icons/directory_open_file_mydocs-3.png");
+	}
+}
+
+// tab view
+.tab-view {
+	.tab-list li {
+		a,
+		label {
+			color: white;
+			text-decoration: underline;
+
+			&.selected {
+				color: yellow;
+				font-weight: bold;
+				font-style: italic;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// code and quote view
+.quote {
+	background: none;
+	border: 6px groove purple;
+	.quoteHead {
+		display: block;
+		width: 100%;
+	}
+}
+
+.code {
+	border: 6px groove lime;
+}
+
+.quote > .quoteHead,
+.code > .codeHead {
+	border: 3px outset yellow;
+	background: blue;
+	width: 100%;
+}
+
+// page list
+ul.page-list {
+	li.active {
+		background: none;
+		border: none;
+		color: yellow;
+	}
+}
+
+// comments
+[id^="section-"] .comment {
+	background: rgba(0, 38, 105, 0.7411764706);
+	border: 6px ridge darkblue;
+}
+
+// button elements
+:is(
+		button,
+		input[type="button"],
+		input[type="submit"],
+		input[type="reset"],
+		input[name="save"],
+		input[name="login"],
+		input[name="confirm"],
+		input[type="file"]::file-selector-button,
+		.button,
+		a.button,
+		label.button,
+		select.cuteedit-button
+	) {
+	border-width: 2px;
+	border: solid;
+	border-color: white grey grey white;
+	background: indigo;
+
+	&:hover {
+		border-color: grey white white grey;
+		background: rgb(56, 0, 96);
+	}
+
+	&:active {
+		border-color: olive yellow yellow olive;
+		background: darkblue;
+	}
+
+	&:disabled,
+	&.disabled {
+		border-color: brown maroon maroon brown;
+		background: rgb(85, 0, 0);
+		color: grey;
+	}
+
+	&.action {
+		color: var(--text) !important;
+	}
+}
+
+// text fields and boxes
+:is(
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="number"],
+		input[type="password"],
+		.form-multi,
+		select:not(.cuteedit-button)
+	) {
+	border-width: 2px;
+	border: solid;
+	border-color: #7f7f7f white white #7f7f7f;
+	background: darkblue;
+
+	&:focus {
+		border-color: darkgreen lime lime darkgreen;
+		background: #420042;
+	}
+}

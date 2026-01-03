@@ -1,0 +1,40 @@
+@use "root";
+
+@use "mixins";
+
+// THEME OUTPUT
+:root {
+    @include root.const;
+    @include root.global-styles;
+    @include root.font-sizes;
+}
+
+@if root.$dark == true {
+    // Dark mode only
+
+    :root {
+        @include root.dark-theme;
+        color-scheme: dark;
+    }
+} @else if root.$light == true {
+    // Light mode only
+    :root {
+        @include root.light-theme;
+        color-scheme: only light;
+    }
+} @else {
+    // Both light and dark mode supported
+
+    :root {
+        @include root.light-theme;
+    }
+
+    body.color-mode-dark {
+        @include root.dark-theme;
+        color-scheme: dark;
+    }
+
+    body:not(.color-mode-dark) {
+        color-scheme: only light;
+    }
+}

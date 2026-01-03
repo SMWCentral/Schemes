@@ -1,0 +1,380 @@
+// "2006 Nostalgia" scheme
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+@use "mixins";
+
+// Scheme Defines
+:root {
+	// SCHEME FONTS
+	--font: "Tahoma", sans-serif;
+	--font-monospace: "Courier New", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: url("/assets/images/schemes/classic/background.png");
+	--main-bg-image: none;
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: url("/assets/images/schemes/classic/banner.png");
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 0;
+	--button-corner-radius: 0;
+	--content-border-radius: 0;
+	--tab-corner-radius: 0;
+
+	// margins
+	--tab-view-margins: 0;
+
+	// gaps
+	--tab-view-gap: 0;
+	--box-gap: 0;
+
+	// padding
+	--content-padding: 6px;
+	--box-padding: 0;
+	--button-padding: 2px 8px;
+	--table-cell-padding: 1px 3px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: transparent;
+	--view-bg: transparent;
+	--menu-bg: #000;
+	--body-bg: #000;
+	--button-bg: #000;
+	--tab-bg: #3f4f5fcc;
+	--action-bar-bg: transparent;
+	--code-bg: #000;
+
+	// text colors
+	--text: #fff;
+	--link-1: #99ff99;
+	--link-2: #99ff99;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #ffb8b8;
+	--focus-ring: #9999ff;
+	--suggested: #9999ff;
+	--success: #92db00;
+	--info: #000;
+	--warning: #c22c2c;
+	--new: #ffd556;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: transparent;
+	--inset-shadow: transparent;
+	--text-shadow: transparent;
+
+	// highlight
+	--inset-highlight: transparent;
+
+	// borders
+	--border: #405060;
+	--box-border: var(--border);
+	--content-box-border: transparent;
+	--button-border: #999;
+	--action-bar-border: var(--border);
+
+	// OVERRIDES
+	--font-size-base: 13px !important;
+	--font-size-h1: 18px !important;
+	--font-size-h2: 14px !important;
+	--spacer-visibility: visible !important;
+
+	// override page width
+	--page-content-width: 100% !important;
+	--page-content-width-wide: 100% !important;
+
+	// extra colors
+	--accent-2: #9999ff;
+	--link-3: #999;
+}
+
+// Scheme Overrides
+#header,
+#main,
+#user-list,
+#footer {
+	a:not(.button, .tag, .forum-icon) {
+		&:hover,
+		&:active,
+		&:focus {
+			background: none;
+		}
+	}
+}
+
+#header .header-textbox,
+#header .header-levelname,
+#main-content #getting-started,
+#user-list {
+	border-image-slice: 7;
+	border-image-width: 7px;
+	border-image-outset: 0;
+	border-image-repeat: repeat repeat;
+	border-image-source: url("/assets/images/schemes/classic/rope.png");
+	background: url("/assets/images/schemes/classic/text-background.png"),
+		url("/assets/images/schemes/classic/background.png");
+}
+
+// bit of a hack to hide the header-box border on mobile
+#header {
+	.header-textbox {
+		@include mixins.mobile {
+			margin-bottom: -9px;
+		}
+	}
+
+	#header-levelname-play {
+		@include mixins.mobile {
+			top: 20px;
+		}
+	}
+
+	.header-levelname {
+		border-image-outset: 7px;
+		margin-top: -9px;
+
+		@include mixins.mobile {
+			width: calc(100% - 14px);
+			margin-left: 7px;
+		}
+	}
+}
+
+// style the main menu
+#main-menu {
+	.box {
+		border-image-slice: 16;
+		border-image-width: 16px;
+		border-image-outset: 0px;
+		border-image-repeat: repeat repeat;
+		border-image-source: url("/assets/images/schemes/classic/pipe.png");
+		padding: 9px;
+		background: url("/assets/images/schemes/classic/text-background.png") transparent;
+
+		h2 {
+			position: absolute;
+			top: -2.5px;
+			left: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			background: url("/assets/images/schemes/classic/pipe-ends.png") center no-repeat;
+		}
+
+		.content {
+			background: none;
+			border-top: 1px solid var(--content-box-border);
+		}
+
+		.menu-section {
+			font-weight: bold;
+
+			* {
+				font: inherit;
+			}
+
+			ul {
+				margin-left: 0;
+				margin-right: 0;
+
+				li {
+					a {
+						&:link,
+						&:visited {
+							color: var(--link-3);
+						}
+
+						&:hover,
+						&:active {
+							color: var(--text);
+							text-decoration: none;
+							background-image: none;
+						}
+					}
+				}
+
+				li.spacer {
+					height: 8px;
+					background: url("/assets/images/schemes/classic/pea.gif") center no-repeat;
+				}
+
+				li:not(.spacer) {
+					background: url("/assets/images/schemes/classic/question-block.gif") center left no-repeat;
+					padding-left: 20px;
+
+					@include mixins.pixelated;
+				}
+			}
+		}
+	}
+}
+
+#mobile-menu:checked ~ #main > #main-menu {
+	background:
+		url("/assets/images/schemes/classic/text-background.png"),
+		url("/assets/images/schemes/classic/background.png") black;
+}
+
+#content,
+[id="main-menu"] + [id$="-content"] {
+	border: 16px solid transparent;
+	border-image-slice: 16;
+	border-image-width: 16px;
+	border-image-outset: 0 4px 0 6px;
+	border-image-repeat: repeat repeat;
+	border-image-source: url("/assets/images/schemes/classic/tree.png");
+
+	background: url("/assets/images/schemes/classic/text-background.png") transparent;
+
+	h1 {
+		&:before {
+			display: inline-block;
+			transform: none !important;
+			transform: scale(0.6) !important;
+			transform-style: inherit;
+			transform-origin: 32px 32px;
+			margin-right: 8px;
+			top: 0 !important;
+		}
+	}
+
+	.box {
+		gap: 0;
+		> h2,
+		> header > h2 {
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			color: var(--accent-2);
+			padding: 4px 8px;
+			&:before {
+				display: none;
+			}
+		}
+
+		> h2,
+		> header {
+			border-bottom: 1px solid var(--border);
+		}
+
+		.content + header,
+		.content + h2 {
+			border-bottom: none;
+			border-top: 1px solid var(--border);
+		}
+	}
+
+	.post,
+	.tab-view {
+		.content {
+			border-left: 1px solid var(--border);
+		}
+	}
+
+	.post {
+		.sidebar {
+			padding: 4px;
+			padding-top: 0;
+			padding-bottom: 24px;
+		}
+
+		.post-info {
+			padding: 3px 5px;
+			border-left: 1px solid var(--border);
+			border-bottom: 1px solid var(--border);
+		}
+
+		.post-info-footer {
+			padding: 3px 5px;
+			border-left: 1px solid var(--border);
+			border-top: 1px solid var(--border);
+			margin-top: -1px;
+		}
+	}
+
+	.news-articles {
+		.content {
+			border-bottom: 1px solid var(--border);
+		}
+	}
+
+	.collapsed {
+		header {
+			border-bottom: none;
+		}
+	}
+}
+
+#main-content {
+	padding-top: 1.5rem;
+}
+
+#section-list-content {
+	td.has-preview {
+		padding-left: 32px;
+
+		.preview-spc-button {
+			.button {
+				height: 24px;
+				width: 24px;
+
+				svg {
+					height: 16px;
+					width: 16px;
+				}
+			}
+		}
+	}
+}
+
+#viewforum-content {
+	.thread-list,
+	.forum-list {
+		td.status {
+			border-right: 1px solid var(--border) !important;
+		}
+
+		td.forum,
+		td.thread {
+			padding-left: 6px;
+		}
+		th.thread {
+			padding-left: 6px;
+			border-left: 1px solid var(--border) !important;
+		}
+	}
+
+	.forum-category {
+		&.waiting header:after {
+			display: block;
+			position: absolute;
+		}
+	}
+}
+
+// override clamp
+.user-list-wrapper {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+// fix missing background
+.cuteedit-input-popup .cuteedit-input-popup-dialog,
+.cuteedit-emoticon-popup .cuteedit-emoticon-popup-dialog {
+	background-color: var(--menu-bg);
+}

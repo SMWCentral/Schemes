@@ -1,0 +1,209 @@
+// Common Visual Styles
+
+// clearfix
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// focus rings
+@mixin focus-ring {
+	border-color: transparent;
+	outline: 2px solid color-mix(in srgb, var(--focus-ring), transparent 30%);
+	outline-offset: 1px;
+}
+
+@mixin focus-ring-checkbox {
+	background-color: transparent;
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--focus-ring), transparent 10%);
+}
+
+@mixin focus-ring-textfield {
+	border-color: var(--focus-ring);
+	outline: none;
+	box-shadow:
+		inset 0 1px 1px var(--drop-shadow),
+		0 0 0 1px color-mix(in srgb, var(--focus-ring), transparent 10%) inset;
+}
+
+// buttons
+@mixin button-styles {
+	padding: var(--button-padding);
+
+	border-radius: var(--button-corner-radius);
+	border: 1px solid var(--button-border);
+
+	background-color: var(--button-bg);
+	background-image: linear-gradient(to bottom, var(--button-gradient-top), var(--button-gradient-bottom));
+
+	text-shadow: 0 1px 0 var(--text-shadow);
+	box-shadow:
+		0 1px 1px 0 var(--drop-shadow),
+		0 1px 2px 0 var(--drop-shadow);
+
+	font: inherit;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text);
+
+	cursor: pointer;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color-mix(in srgb, var(--button-bg), var(--hover-mix) 5%);
+		text-decoration: none;
+	}
+
+	&:focus-visible {
+		@include focus-ring;
+	}
+
+	&.active,
+	&:active {
+		background-image: linear-gradient(to top, var(--button-gradient-top), var(--button-gradient-bottom));
+	}
+
+	&:disabled,
+	&.disabled {
+		color: var(--text);
+		filter: opacity(0.8);
+		cursor: not-allowed;
+		background-image: none;
+		text-shadow: none;
+		border: 1px solid color-mix(in srgb, var(--button-border), transparent 20%);
+		pointer-events: none;
+	}
+
+	// submit button
+	&.submit {
+		border-color: color-mix(in srgb, var(--suggested), transparent 50%);
+		color: var(--suggested);
+		font-weight: bold;
+		box-shadow:
+			0 1px 2px 0 var(--drop-shadow),
+			0 3px 6px 0 var(--drop-shadow),
+			0 400px 0 0 color-mix(in srgb, var(--suggested), transparent 95%) inset,
+			0 0 0 1px color-mix(in srgb, var(--suggested), transparent 50%) inset;
+	}
+}
+
+// text-field style
+@mixin text-field-style {
+	padding: 6px;
+
+	border: 1px solid var(--border);
+	border-radius: var(--button-corner-radius);
+
+	background-image: none !important;
+	background-color: var(--input-bg);
+	box-shadow: 0 1px 1px var(--drop-shadow) inset;
+
+	color: var(--text);
+	font-family: inherit;
+	font-size: var(--font-size-base);
+	font-weight: normal;
+	text-align: left;
+
+	&:active,
+	&:hover {
+		background-color: color-mix(in srgb, var(--input-bg), var(--text) 1%);
+	}
+
+	&:focus-visible {
+		@include focus-ring-textfield;
+		background-color: color-mix(in srgb, var(--input-bg), var(--focus-ring) 2%);
+	}
+
+	&:disabled {
+		color: var(--dim-text);
+		cursor: not-allowed;
+		box-shadow: none;
+		pointer-events: none;
+	}
+}
+
+// container box
+@mixin container-box-style {
+	border: 1px solid var(--box-border);
+	border-radius: var(--base-corner-radius);
+
+	background: var(--box-bg);
+
+	box-shadow:
+		0 2px 4px var(--drop-shadow),
+		0 4px 8px var(--drop-shadow);
+	text-shadow: 0 1px 1px var(--text-shadow);
+	padding: var(--box-padding);
+}
+
+// content box styles
+@mixin content-box-style {
+	border: 1px solid var(--content-box-border);
+	border-radius: var(--content-border-radius);
+	background: var(--view-bg);
+	box-shadow:
+		inset 0 2px 3px var(--inset-shadow),
+		inset 0 3px 3px var(--inset-shadow),
+		inset 0 1px 0 1px var(--inset-shadow);
+	padding: var(--content-padding);
+	padding-bottom: calc(var(--content-padding) * 1.75);
+}
+
+// inline tags
+@mixin tag-styles {
+	height: 18px;
+	line-height: 18px;
+	border-radius: 9px 2px 2px 9px;
+	padding: 0 8px;
+
+	font-weight: normal;
+	font-size: var(--font-size-smaller);
+	color: var(--text);
+
+	background-color: var(--tag-bg);
+	text-shadow: none;
+	text-decoration: none;
+
+	&:hover {
+		background-color: color-mix(in srgb, var(--tag-bg), var(--hover-mix) 5%);
+		text-decoration: none;
+	}
+
+	&:active {
+		background-color: color-mix(in srgb, var(--tag-bg), var(--hover-mix) 9%);
+	}
+}
+
+// menu collapse failed state
+@mixin failed-state {
+	content: "\2716"; // HEAVY MULTIPLICATION X
+	margin-left: 8px;
+	vertical-align: middle;
+	font-size: var(--font-size-smaller);
+	font-weight: bold;
+	color: var(--warning);
+	width: auto;
+	height: auto;
+	background: none;
+	opacity: 0.9;
+}
+
+// inline messages
+@mixin inline-message($color) {
+	width: fit-content;
+	margin: 0 auto 16px;
+	padding: 8px 16px;
+	text-align: center;
+	border-radius: var(--base-corner-radius);
+	color: color-mix(in srgb, white, transparent 5%);
+	text-shadow: none;
+	background-color: $color;
+
+	svg {
+		fill: currentColor;
+	}
+}

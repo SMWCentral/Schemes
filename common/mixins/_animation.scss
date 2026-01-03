@@ -1,0 +1,22 @@
+@use "sass:string";
+
+@mixin spinner($transform: null) {
+	$keyframes: string.unquote("spinner-#{string.unique-id()}");
+
+	border-top: 2px solid white;
+	border-right: 2px solid white;
+	border-radius: 50%;
+	animation: 1s linear infinite $keyframes;
+
+	@at-root {
+		@keyframes #{$keyframes} {
+			0% {
+				transform: #{$transform} rotate(0);
+			}
+
+			100% {
+				transform: #{$transform} rotate(360deg);
+			}
+		}
+	}
+}

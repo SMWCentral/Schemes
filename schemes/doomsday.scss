@@ -1,0 +1,149 @@
+// "Doomsday" scheme
+// Author: Tahixham
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+@use "mixins";
+
+// Import Font
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+	// SCHEME FONTS
+	--font: "Noto Sans", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+	--body-bg-image: url("/assets/images/schemes/doomsday/bg.png");
+	--main-bg-image: none;
+	--footer-bg-image: none;
+
+	--header-logo-image: url("/assets/images/schemes/doomsday/logo.png");
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 3px;
+	--button-corner-radius: 2px;
+	--content-border-radius: 1px;
+	--tab-corner-radius: 3px;
+
+	// margins
+	--tab-view-margins: 8px;
+
+	// gaps
+	--tab-view-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 4px 8px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #4d4940;
+	--view-bg: #303027;
+	--menu-bg: #191914;
+	--body-bg: #303027;
+	--button-bg: #303027;
+	--tab-bg: #6f6a5e;
+	--action-bar-bg: #797164;
+	--code-bg: #1f1e1b;
+
+	// text colors
+	--text: #ddd;
+	--link-1: #e0e0bc;
+	--link-2: #e0e0bc;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #ffcc66;
+	--focus-ring: #404038;
+	--suggested: #e0e0bc;
+	--success: #5a7f11;
+	--info: #47473a;
+	--warning: #682222;
+	--new: #f9e095;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.1);
+	--inset-shadow: rgba(0, 0, 0, 0.1);
+	--text-shadow: #222;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.1);
+
+	// borders
+	--border: #4d4940;
+	--box-border: #303027;
+	--content-box-border: transparent;
+	--button-border: transparent;
+	--action-bar-border: #303027;
+}
+
+// Scheme Overrides
+
+// remove shading on main
+#main {
+	background-color: transparent;
+	border-top: none;
+}
+
+#footer {
+	background-color: var(--body-bg);
+}
+
+// apply a sepia effect to header
+h1:before {
+	filter: sepia(80%);
+}
+
+// make user list floating
+#user-list {
+	@include mixins.container-box-style;
+	margin: 16px 0;
+}
+
+// override action-bar style
+.action-bar {
+	@include mixins.container-box-style;
+}
+
+// change box background
+.action-bar,
+.box {
+	background-color: var(--box-bg);
+	background: linear-gradient(180deg, var(--action-bar-bg) 0%, var(--box-bg) 64px);
+}
+
+#header {
+	.header-shading {
+		backdrop-filter: sepia(80%);
+	}
+
+	.header-textbox {
+		border: 1px solid var(--box-border);
+		box-shadow:
+			0 2px 4px var(--drop-shadow),
+			0 4px 8px var(--drop-shadow),
+			0 4px 4px rgba(255, 255, 255, 0.2) inset;
+	}
+}
+
+// override box-shadow
+#user-list,
+.box,
+.action-bar {
+	box-shadow:
+		0 2px 4px var(--drop-shadow),
+		0 4px 8px var(--drop-shadow),
+		0 2px 4px rgba(255, 255, 255, 0.2) inset;
+}

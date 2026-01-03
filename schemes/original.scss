@@ -1,0 +1,134 @@
+// "Rust" scheme
+// a.k.a the "original" scheme
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+@use "mixins";
+
+// Import Font
+@import "https://fonts.googleapis.com/css?family=Droid+Sans:700,400";
+
+:root {
+	// SCHEME FONTS
+	--font: "Droid Sans", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: "none";
+	--main-bg-image: url("/assets/images/background-dark.png");
+	--footer-bg-image: "none";
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 3px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 0;
+	--tab-corner-radius: 0;
+
+	// margins
+	--tab-view-margins: 2px;
+
+	// gaps
+	--tab-view-gap: 4px;
+	--box-gap: 4px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 4px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #444;
+	--view-bg: #2d2e30;
+	--menu-bg: #2d2e30;
+	--body-bg: #191a1c;
+	--button-bg: #626262;
+	--tab-bg: #2d2e30;
+	--action-bar-bg: hsla(0, 0%, 93%, 0.1);
+	--code-bg: #191a1c;
+
+	// text colors
+	--text: #eee;
+	--link-1: #d89b64;
+	--link-2: #fff1a8;
+	--admin: #ef8fcc;
+
+	// named colors
+	--accent: #ffb8b8;
+	--focus-ring: #7f7361;
+	--suggested: #d89b64;
+	--success: #92db00;
+	--info: #696969;
+	--warning: #c22c2c;
+	--new: #ffd556;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.2);
+	--inset-shadow: rgba(0, 0, 0, 0.1);
+	--text-shadow: #000;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.2);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 80%);
+	--box-border: rgba(255, 255, 255, 0.2);
+	--content-box-border: var(--border);
+	--button-border: rgba(255, 255, 255, 0.2);
+	--action-bar-border: hsla(0, 0%, 93%, 0.2);
+
+	// OVERRIDES
+	--spacer-visibility: visible !important;
+	--font-size-base: 13px !important;
+}
+
+.box {
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) var(--box-bg);
+}
+
+#header .header-levelname,
+#header .header-textbox {
+	background: linear-gradient(to top, rgba(black, 0.3) 0, rgba(black, 0) 100px) var(--info);
+}
+
+table.table,
+table.list {
+	border-collapse: inherit;
+}
+
+table.list {
+	th,
+	td {
+		border-color: var(--border) var(--border) black black;
+		line-height: inherit;
+	}
+}
+
+.header-textbox {
+	border: 1px solid var(--border);
+}
+
+// override action-bar style
+#getting-started,
+.action-bar {
+	@include mixins.container-box-style;
+}
+
+.tab-list-wrapper li > label.selected {
+	@include mixins.content-box-style;
+	padding: 0;
+}

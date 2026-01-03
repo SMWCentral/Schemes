@@ -1,0 +1,29 @@
+@use "../root";
+
+@mixin light-mode-only() {
+	@if root.$light == true {
+		// light-mode-only schemes: always use light mode styles
+		@content;
+	} @else if root.$dark != true {
+		// dual-mode schemes: use light mode if enabled
+		#{if(sass(&): "body:not(.color-mode-dark) &"; else: "body:not(.color-mode-dark)")} {
+			@content;
+		}
+	}
+
+	// do nothing for dark-mode-only schemes
+}
+
+@mixin dark-mode-only() {
+	@if root.$dark == true {
+		// dark-mode-only schemes: always use dark mode styles
+		@content;
+	} @else if root.$light != true {
+		// dual-mode schemes: use dark mode if enabled
+		#{if(sass(&): "body.color-mode-dark &"; else: "body.color-mode-dark")} {
+			@content;
+		}
+	}
+
+	// do nothing for light-mode-only schemes
+}
