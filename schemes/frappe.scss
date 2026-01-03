@@ -1,0 +1,94 @@
+// "Frappe" scheme by AmperSam
+// based on Catppuccin Frappé https://catppuccin.com/palette/
+
+@use "root" with (
+	// set palette
+	$dark: true
+);
+@use "shared";
+
+// Import Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+// Scheme Defines
+:root {
+	// SCHEME FONTS
+	--font: "Roboto", sans-serif;
+	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: none;
+	--main-bg-image: url("/assets/images/background-dark.png");
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 6px;
+	--button-corner-radius: 3px;
+	--content-border-radius: 4px;
+	--tab-corner-radius: 3px;
+
+	// margins
+	--tab-view-margins: 8px;
+
+	// gaps
+	--tab-view-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #414559;
+	--view-bg: #292c3c;
+	--menu-bg: #292c3c;
+	--body-bg: #232634;
+	--button-bg: #51576d;
+	--tab-bg: #737994;
+	--action-bar-bg: #414559;
+	--code-bg: #232634;
+
+	// text colors
+	--text: #c6d0f5;
+	--link-1: #8caaee;
+	--link-2: #f5c2e7;
+	--admin: #ca9ee6;
+
+	// named colors
+	--accent: #e96464;
+	--focus-ring: #8caaee;
+	--suggested: #b5bfe2;
+	--success: #a6d189;
+	--info: #626880;
+	--error: #e78284;
+	--warning: #ef9f76;
+	--new: #e5c890;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: rgba(0, 0, 0, 0.07);
+	--inset-shadow: transparent;
+	--text-shadow: transparent;
+
+	// highlight
+	--inset-highlight: rgba(255, 255, 255, 0.1);
+
+	// borders
+	--border: color-mix(in srgb, var(--text), transparent 90%);
+	--box-border: transparent;
+	--content-box-border: var(--box-bg);
+	--button-border: transparent;
+	--action-bar-border: transparent;
+}
