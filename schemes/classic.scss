@@ -31,11 +31,9 @@
 	--content-border-radius: 0;
 	--tab-corner-radius: 0;
 
-	// margins
-	--tab-view-margins: 0;
-
 	// gaps
 	--tab-view-gap: 0;
+	--tab-list-gap: 0;
 	--box-gap: 0;
 
 	// padding
@@ -49,6 +47,7 @@
 	// main colors
 	--box-bg: transparent;
 	--view-bg: transparent;
+	--main-bg: transparent;
 	--menu-bg: #000;
 	--body-bg: #000;
 	--button-bg: #000;
@@ -68,7 +67,8 @@
 	--suggested: #9999ff;
 	--success: #92db00;
 	--info: #000;
-	--warning: #c22c2c;
+	--error: #c22c2c;
+	--warning: #ffd556;
 	--new: #ffd556;
 
 	// OTHER COLORS
@@ -95,8 +95,8 @@
 	--spacer-visibility: visible !important;
 
 	// override page width
-	--page-content-width: 100% !important;
-	--page-content-width-wide: 100% !important;
+	--page-content-width: 100vw !important;
+	--page-content-width-wide: 100vw !important;
 
 	// extra colors
 	--accent-2: #9999ff;
@@ -364,6 +364,27 @@
 			display: block;
 			position: absolute;
 		}
+	}
+}
+
+// dialogs
+#details-dialog,
+#bps-modal {
+	border: 16px solid transparent;
+	border-image-slice: 16;
+	border-image-width: 16px;
+	border-image-outset: 0;
+	border-image-repeat: repeat repeat;
+	border-image-source: url("/assets/images/schemes/classic/tree.png");
+
+	header,
+	.content {
+		background-color: var(--body-bg);
+	}
+
+	.content {
+		margin-top: 0 !important;
+		padding-top: 12px;
 	}
 }
 

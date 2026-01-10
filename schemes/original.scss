@@ -34,11 +34,9 @@
 	--content-border-radius: 0;
 	--tab-corner-radius: 0;
 
-	// margins
-	--tab-view-margins: 2px;
-
 	// gaps
-	--tab-view-gap: 4px;
+	--tab-view-gap: 2px;
+	--tab-list-gap: 4px;
 	--box-gap: 4px;
 
 	// padding
@@ -47,39 +45,66 @@
 	--button-padding: 6px 12px;
 	--table-cell-padding: 8px;
 
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: #fff;
+	--base_2: #eee;
+	--base_3: #adadad;
+	--base_4: #696969;
+	--base_5: #626262;
+	--base_6: #444;
+	--base_7: #323335;
+	--base_8: #2d2e30;
+	--base_9: #191a1c;
+	--base_10: #000;
+
+	// scheme colors
+	--pink: #ef8fcc;
+	--purple: #da8fef;
+	--blue: #0077ff;
+	--green: #92db00;
+	--yellow: #fff1a8;
+	--orange: #d89b64;
+	--red: #c22c2c;
+	--brown: #897259;
+
+	// accent
+	--accent: #ffb8b8;
+
 	// SCHEME COLORS
 
 	// main colors
-	--box-bg: #444;
-	--view-bg: #2d2e30;
-	--menu-bg: #2d2e30;
-	--body-bg: #191a1c;
-	--button-bg: #626262;
-	--tab-bg: #2d2e30;
-	--action-bar-bg: hsla(0, 0%, 93%, 0.1);
-	--code-bg: #191a1c;
+	--box-bg: var(--base_6);
+	--view-bg: var(--base_8);
+	--main-bg: var(--base_8);
+	--menu-bg: var(--base_8);
+	--body-bg: var(--base_9);
+	--button-bg: var(--base_5);
+	--tab-bg: var(--base_8);
+	--action-bar-bg: var(--base_6);
+	--code-bg: var(--base_9);
 
 	// text colors
-	--text: #eee;
-	--link-1: #d89b64;
-	--link-2: #fff1a8;
-	--admin: #ef8fcc;
+	--text: var(--base_2);
+	--link-1: var(--orange);
+	--link-2: var(--yellow);
+	--admin: var(--pink);
 
 	// named colors
-	--accent: #ffb8b8;
-	--focus-ring: #7f7361;
-	--suggested: #d89b64;
-	--success: #92db00;
-	--info: #696969;
-	--warning: #c22c2c;
-	--new: #ffd556;
+	--suggested: var(--yellow);
+	--info: var(--base_4);
+	--success: var(--green);
+	--error: var(--red);
+	--warning: var(--orange);
+	--new: var(--yellow);
 
 	// OTHER COLORS
 
 	// shadows
 	--drop-shadow: rgba(0, 0, 0, 0.2);
 	--inset-shadow: rgba(0, 0, 0, 0.1);
-	--text-shadow: #000;
+	--text-shadow: var(--base_10);
 
 	// highlight
 	--inset-highlight: rgba(255, 255, 255, 0.2);
@@ -89,7 +114,10 @@
 	--box-border: rgba(255, 255, 255, 0.2);
 	--content-box-border: var(--border);
 	--button-border: rgba(255, 255, 255, 0.2);
-	--action-bar-border: hsla(0, 0%, 93%, 0.2);
+	--action-bar-border: var(--border);
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--orange), transparent 40%);
 
 	// OVERRIDES
 	--spacer-visibility: visible !important;

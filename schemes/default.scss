@@ -8,6 +8,44 @@
 
 // Scheme Defines
 :root {
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: #ffffff;
+	--base_2: #fcfdfd;
+	--base_3: #f4f6f6;
+	--base_4: #e7ebee;
+	--base_5: #d8e1e7;
+	--base_6: #585862;
+	--base_7: #424957;
+	--base_8: #3f3f45;
+	--base_9: #1d1e26;
+	--base_10: #121417;
+
+	// light scheme colors
+	--light_pink: #df37a2;
+	--light_purple: #c037df;
+	--light_blue: #286cc4;
+	--light_green: #6ec428;
+	--light_yellow: #ecb923;
+	--light_orange: #ec9f23;
+	--light_red: #d24343;
+	--light_brown: #89735b;
+
+	// dark scheme colors
+	--dark_pink: #eea7d4;
+	--dark_purple: #dda7ee;
+	--dark_blue: #abc8ef;
+	--dark_green: #93ec53;
+	--dark_yellow: #ffd556;
+	--dark_orange: #ffb056;
+	--dark_red: #c22c2c;
+	--dark_brown: #bc9d7c;
+
+	// accent colors
+	--light_accent: #ee8866;
+	--dark_accent: #f3ac94;
+
 	// SCHEME FONTS
 	--font: "Roboto", sans-serif;
 	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -30,11 +68,9 @@
 	--content-border-radius: 0;
 	--tab-corner-radius: 4px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -45,30 +81,31 @@
 
 	// SCHEME COLORS
 
-	// main colors
-	--box-bg: hsl(180, 2%, 99%);
-	--view-bg: hsl(180, 7%, 96%);
-	--menu-bg: #fff;
-	--body-bg: #fff;
-	--button-bg: #fff;
-	--tab-bg: hsla(210, 20%, 42%, 0.12);
-	--action-bar-bg: rgba(59, 81, 117, 0.06);
-	--code-bg: #fff;
+	// background colors
+	--menu-bg: var(--base_1);
+	--box-bg: var(--base_2);
+	--view-bg: var(--base_3);
+	--main-bg: var(--base_3);
+	--body-bg: var(--base_1);
+	--button-bg: var(--base_1);
+	--tab-bg: var(--base_4);
+	--code-bg: var(--base_1);
+	--action-bar-bg: color-mix(in srgb, var(--base_7), transparent 95%);
 
 	// text colors
-	--text: #000521;
-	--link-1: #4590f3;
-	--link-2: #f47b2f;
-	--admin: #df37a2;
+	--text: var(--base_10);
+	--link-1: var(--light_blue);
+	--link-2: var(--light_orange);
+	--admin: var(--light_pink);
 
 	// named colors
-	--accent: #ee8866;
-	--focus-ring: #8fb7ef;
-	--suggested: #286cc4;
-	--success: #90c428;
-	--info: hsl(180, 7%, 96%);
-	--warning: #d24343;
-	--new: #ecb923;
+	--accent: var(--light_accent);
+	--suggested: var(--light_blue);
+	--success: var(--light_green);
+	--info: var(--base_2);
+	--error: var(--light_red);
+	--warning: var(--light_orange);
+	--new: var(--light_yellow);
 
 	// OTHER COLORS
 
@@ -84,10 +121,14 @@
 	--border: color-mix(in srgb, var(--text), transparent 87%);
 	--box-border: transparent;
 	--content-box-border: var(--box-bg);
-	--button-border: color-mix(in srgb, var(--button-bg), var(--lighten) 5%);
-	--action-bar-border: rgba(59, 81, 117, 0.1);
+	--button-border: color-mix(in srgb, var(--button-bg), var(--darken) 15%);
+	--action-bar-border: color-mix(in srgb, var(--base_7), transparent 90%);
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--light_blue), transparent 40%);
 }
 
+// DARK SCHEME OVERRIDES
 @include mixins.dark-mode-only {
 	// SCHEME ASSETS
 
@@ -101,37 +142,38 @@
 
 	// SCHEME COLORS
 
-	// main colors
-	--box-bg: #3f3f45;
-	--view-bg: #1d1e25;
-	--menu-bg: #1d1e26;
-	--body-bg: #121417;
-	--button-bg: #424957;
-	--tab-bg: #585862;
-	--action-bar-bg: rgba(252, 252, 252, 0.06);
-	--code-bg: #121417;
+	// background colors
+	--box-bg: var(--base_8);
+	--view-bg: var(--base_9);
+	--menu-bg: var(--base_9);
+	--main-bg: var(--base_9);
+	--body-bg: var(--base_10);
+	--button-bg: var(--base_7);
+	--tab-bg: var(--base_6);
+	--action-bar-bg: color-mix(in srgb, var(--base_5), transparent 95%);
+	--code-bg: var(--base_10);
 
 	// text colors
-	--text: #ddd;
-	--link-1: #abc8ef;
-	--link-2: #f79f6a;
-	--admin: #ef8fcc;
+	--text: var(--base_5);
+	--link-1: var(--dark_blue);
+	--link-2: var(--dark_orange);
+	--admin: var(--dark_pink);
 
 	// named colors
-	--accent: #f3ac94;
-	--focus-ring: #8fb7ef;
-	--suggested: #8fb7ef;
-	--success: #92db00;
-	--info: #30323f;
-	--warning: #c22c2c;
-	--new: #ffd556;
+	--accent: var(--dark_accent);
+	--suggested: var(--dark_blue);
+	--success: var(--dark_green);
+	--info: var(--base_7);
+	--error: var(--dark_red);
+	--warning: var(--dark_orange);
+	--new: var(--dark_yellow);
 
 	// OTHER COLORS
 
 	// shadows
 	--drop-shadow: rgba(0, 0, 0, 0.2);
 	--inset-shadow: rgba(0, 0, 0, 0.1);
-	--text-shadow: #222;
+	--text-shadow: var(--base_9);
 
 	// highlight
 	--inset-highlight: rgba(255, 255, 255, 0.1);
@@ -141,5 +183,8 @@
 	--box-border: transparent;
 	--content-box-border: var(--box-bg);
 	--button-border: color-mix(in srgb, var(--button-bg), var(--lighten) 10%);
-	--action-bar-border: rgba(252, 252, 252, 0.1);
+	--action-bar-border: color-mix(in srgb, var(--base_5), transparent 90%);
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--dark_blue), transparent 40%);
 }

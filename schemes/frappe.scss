@@ -12,6 +12,32 @@
 
 // Scheme Defines
 :root {
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: #c6d0f5;
+	--base_2: #a5adce;
+	--base_3: #838ba7;
+	--base_4: #737994;
+	--base_5: #626880;
+	--base_6: #51576d;
+	--base_7: #414559;
+	--base_8: #303446;
+	--base_9: #292c3c;
+	--base_10: #232634;
+
+	// scheme colors
+	--pink: #f5c2e7;
+	--purple: #ca9ee6;
+	--blue: #8caaee;
+	--green: #a6d189;
+	--red: #e78284;
+	--orange: #ef9f76;
+	--yellow: #e5c890;
+
+	// accent color
+	--accent: #e96464;
+
 	// SCHEME FONTS
 	--font: "Roboto", sans-serif;
 	--font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -34,11 +60,9 @@
 	--content-border-radius: 4px;
 	--tab-corner-radius: 3px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -50,30 +74,29 @@
 	// SCHEME COLORS
 
 	// main colors
-	--box-bg: #414559;
-	--view-bg: #292c3c;
-	--menu-bg: #292c3c;
-	--body-bg: #232634;
-	--button-bg: #51576d;
-	--tab-bg: #737994;
-	--action-bar-bg: #414559;
-	--code-bg: #232634;
+	--box-bg: var(--base_7);
+	--view-bg: var(--base_9);
+	--menu-bg: var(--base_10);
+	--main-bg: var(--base_9);
+	--body-bg: var(--base_10);
+	--button-bg: var(--base_6);
+	--tab-bg: var(--base_5);
+	--action-bar-bg: var(--base_7);
+	--code-bg: var(--base_10);
 
 	// text colors
-	--text: #c6d0f5;
-	--link-1: #8caaee;
-	--link-2: #f5c2e7;
-	--admin: #ca9ee6;
+	--text: var(--base_1);
+	--link-1: var(--blue);
+	--link-2: var(--pink);
+	--admin: var(--purple);
 
 	// named colors
-	--accent: #e96464;
-	--focus-ring: #8caaee;
-	--suggested: #b5bfe2;
-	--success: #a6d189;
-	--info: #626880;
-	--error: #e78284;
-	--warning: #ef9f76;
-	--new: #e5c890;
+	--suggested: var(--yellow);
+	--success: var(--green);
+	--info: var(--base_7);
+	--error: var(--red);
+	--warning: var(--orange);
+	--new: var(--yellow);
 
 	// OTHER COLORS
 
@@ -91,4 +114,7 @@
 	--content-box-border: var(--box-bg);
 	--button-border: transparent;
 	--action-bar-border: transparent;
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--blue), transparent 40%);
 }

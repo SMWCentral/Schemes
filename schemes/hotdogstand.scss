@@ -1,0 +1,140 @@
+// "Hotdog Stand" scheme
+// Author: Telinc1
+
+@use "root" with (
+	// set palette
+	$light: true
+);
+
+@use "shared";
+@use "mixins";
+
+:root {
+	// SCHEME FONTS
+	--font: "Arial", sans-serif;
+	--font-monospace: "Courier New", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+	// SCHEME ASSETS
+
+	// background images
+	--body-bg-image: none;
+	--main-bg-image: none;
+	--footer-bg-image: none;
+
+	// header image
+	--header-logo-image: none;
+
+	// SCHEME GEOMETRY
+
+	// corner radii
+	--base-corner-radius: 2px;
+	--button-corner-radius: 2px;
+	--content-border-radius: 0;
+	--tab-corner-radius: 2px;
+
+	// gaps
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
+	--box-gap: 8px;
+
+	// padding
+	--content-padding: 12px;
+	--box-padding: 8px;
+	--button-padding: 6px 12px;
+	--table-cell-padding: 8px;
+
+	// SCHEME COLORS
+
+	// main colors
+	--box-bg: #fc1919;
+	--view-bg: #fbff39;
+	--main-bg: #fc1919;
+	--menu-bg: #000000;
+	--body-bg: #fc1919;
+	--button-bg: #c0c4c8;
+	--button-gradient-top: var(--button-bg);
+	--button-gradient-bottom: var(--button-bg);
+	--tab-bg: #fcfcfc;
+	--action-bar-bg: #fc1919;
+	--code-bg: #fbff39;
+
+	// override colors
+	--input-bg: #fcfcfc;
+	--aside-bg: #fbff39;
+
+	// text colors
+	--text: #000000;
+	--link-1: #1000a5;
+	--link-2: #00a958;
+	--admin: #a80554;
+
+	// named colors
+	--accent: #00a958;
+	--focus-ring: #a80554;
+	--suggested: #00a958;
+	--success: #00a958;
+	--info: #fbff39;
+	--error: #a80554;
+	--warning: #a80554;
+	--new: #a80554;
+
+	// OTHER COLORS
+
+	// shadows
+	--drop-shadow: transparent;
+	--inset-shadow: transparent;
+	--text-shadow: transparent;
+
+	// outlines and borders
+	--inset-highlight: #000;
+
+	// borders
+	--border: #000;
+	--box-border: #000;
+	--content-box-border: #000;
+	--button-border: #000;
+	--action-bar-border: #000;
+}
+
+#user-menu :not(input),
+#user-menu #menu-actions-user a:not(.action),
+.box > :not(.content),
+#footer {
+	color: #fcfcfc;
+	fill: #fcfcfc;
+}
+
+.box .content,
+.tab-view .tab-list-wrapper .tab-list li > a.selected,
+.tab-view .tab-list-wrapper .tab-list li label.selected {
+	color: #000;
+	fill: #000;
+}
+
+:is(
+		button,
+		input[type="button"],
+		input[type="submit"],
+		input[type="reset"],
+		input[name="save"],
+		input[name="login"],
+		input[name="confirm"],
+		input[type="file"]::file-selector-button,
+		.button,
+		a.button,
+		label.button,
+		select.cuteedit-button
+	) {
+	background-color: var(--button-bg);
+
+	box-shadow:
+		3px 3px 0 0 #fcfcfc inset,
+		-3px -3px 0 0 #84888c inset;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #c0c4c8;
+		box-shadow: 1px 1px 0 0 #84888c inset;
+	}
+}

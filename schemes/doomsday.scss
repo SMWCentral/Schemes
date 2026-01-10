@@ -31,11 +31,9 @@
 	--content-border-radius: 1px;
 	--tab-corner-radius: 3px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -44,49 +42,79 @@
 	--button-padding: 4px 8px;
 	--table-cell-padding: 8px;
 
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: #b3aa9c;
+	--base_2: #797164;
+	--base_3: #6f6a5e;
+	--base_4: #55534c;
+	--base_5: #4d4940;
+	--base_6: #404038;
+	--base_7: #303027;
+	--base_8: #22221d;
+	--base_9: #191914;
+	--base_10: #1f1e1b;
+
+	// scheme colors
+	--pink: #ef8fcc;
+	--purple: #da8fef;
+	--blue: #798fd2;
+	--green: #5a7f11;
+	--yellow: #f9e095;
+	--orange: #ebb577;
+	--red: #682222;
+	--brown: #897259;
+
+	// accent
+	--accent: #ffcc66;
+
 	// SCHEME COLORS
 
 	// main colors
-	--box-bg: #4d4940;
-	--view-bg: #303027;
-	--menu-bg: #191914;
-	--body-bg: #303027;
-	--button-bg: #303027;
-	--tab-bg: #6f6a5e;
-	--action-bar-bg: #797164;
-	--code-bg: #1f1e1b;
+	--box-bg: var(--base_5);
+	--view-bg: var(--base_7);
+	--main-bg: var(--base_7);
+	--menu-bg: var(--base_9);
+	--body-bg: var(--base_7);
+	--button-bg: var(--base_7);
+	--tab-bg: var(--base_3);
+	--action-bar-bg: var(--base_2);
+	--code-bg: var(--base_10);
 
 	// text colors
 	--text: #ddd;
 	--link-1: #e0e0bc;
 	--link-2: #e0e0bc;
-	--admin: #ef8fcc;
+	--admin: var(--pink);
 
 	// named colors
-	--accent: #ffcc66;
-	--focus-ring: #404038;
 	--suggested: #e0e0bc;
-	--success: #5a7f11;
-	--info: #47473a;
-	--warning: #682222;
-	--new: #f9e095;
+	--success: var(--green);
+	--info: var(--base_5);
+	--error: var(--red);
+	--warning: var(--orange);
+	--new: var(--yellow);
 
 	// OTHER COLORS
 
 	// shadows
 	--drop-shadow: rgba(0, 0, 0, 0.1);
 	--inset-shadow: rgba(0, 0, 0, 0.1);
-	--text-shadow: #222;
+	--text-shadow: var(--base_8);
 
 	// highlight
 	--inset-highlight: rgba(255, 255, 255, 0.1);
 
 	// borders
-	--border: #4d4940;
-	--box-border: #303027;
+	--border: var(--base_5);
+	--box-border: var(--base_7);
 	--content-box-border: transparent;
 	--button-border: transparent;
-	--action-bar-border: #303027;
+	--action-bar-border: var(--base_7);
+
+	// focus ring
+	--focus-ring: var(--base_4);
 }
 
 // Scheme Overrides

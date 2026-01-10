@@ -107,4 +107,4 @@ Built and maintained by [Telinc1](https://github.com/telinc1). SMW Central is pr
 
 ## Version
 
-The included SCSS files are split from commit `e808c39` of the SMW Central source code.
+The included SCSS files are split from commit `0cb96287` of the SMW Central source code.

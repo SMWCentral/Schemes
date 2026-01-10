@@ -34,11 +34,9 @@
 	--content-border-radius: 0;
 	--tab-corner-radius: 3px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -47,39 +45,66 @@
 	--button-padding: 4px 8px;
 	--table-cell-padding: 8px;
 
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: hsl(225, 33%, 90%);
+	--base_2: hsl(225, 33%, 70%);
+	--base_3: hsl(226, 33%, 63%);
+	--base_4: hsl(224, 23%, 41%);
+	--base_5: hsl(225, 27%, 33%);
+	--base_6: hsl(226, 30%, 25%);
+	--base_7: hsl(225, 30%, 22%);
+	--base_8: hsl(221, 32%, 21%);
+	--base_9: hsl(226, 41%, 12%);
+	--base_10: hsl(226, 10%, 2%);
+
+	// scheme colors
+	--pink: #ef8fcc;
+	--purple: #da8fef;
+	--blue: #798fd2;
+	--green: #92db00;
+	--yellow: #ffd556;
+	--orange: #ffbb56;
+	--red: #c22c2c;
+	--brown: #897259;
+
+	// accent
+	--accent: #ffcc66;
+
 	// SCHEME COLORS
 
 	// main colors
-	--box-bg: hsla(224, 23%, 41%, 0.65);
-	--view-bg: hsl(226, 41%, 12%);
-	--menu-bg: hsl(226, 30%, 25%);
-	--body-bg: hsla(225, 30%, 22%, 1);
-	--button-bg: hsl(227, 31%, 26%);
-	--tab-bg: rgba(121, 132, 163, 0.6);
-	--action-bar-bg: hsla(225, 40%, 62%, 0.06);
-	--code-bg: hsl(221, 32%, 21%);
+	--box-bg: color-mix(in srgb, var(--base_3), transparent 65%);
+	--view-bg: var(--base_9);
+	--main-bg: var(--base_8);
+	--menu-bg: var(--base_6);
+	--body-bg: var(--base_7);
+	--button-bg: var(--base_5);
+	--tab-bg: color-mix(in srgb, var(--base_2), transparent 60%);
+	--action-bar-bg: var(--box-bg);
+	--code-bg: var(--base_8);
 
 	// text colors
-	--text: #ddd;
-	--link-1: hsl(225, 50%, 65%);
-	--link-2: hsl(226, 33%, 63%);
-	--admin: #ef8fcc;
+	--text: var(--base_1);
+	--link-1: var(--blue);
+	--link-2: var(--base_3);
+	--admin: var(--pink);
 
 	// named colors
-	--accent: #ffcc66;
-	--focus-ring: rgb(76, 92, 150);
-	--suggested: hsl(225, 50%, 65%);
-	--success: #92db00;
-	--info: hsla(225, 37%, 23%, 0.9);
-	--warning: #c22c2c;
-	--new: #ffd556;
+	--suggested: var(--base_2);
+	--success: var(--green);
+	--info: color-mix(in srgb, var(--base_8), transparent 10%);
+	--error: var(--red);
+	--warning: var(--orange);
+	--new: var(--yellow);
 
 	// OTHER COLORS
 
 	// shadows
 	--drop-shadow: rgba(0, 0, 0, 0.2);
 	--inset-shadow: rgba(0, 0, 0, 0.1);
-	--text-shadow: #222;
+	--text-shadow: var(--base_9);
 
 	// highlight
 	--inset-highlight: rgba(255, 255, 255, 0.1);
@@ -89,7 +114,10 @@
 	--box-border: rgba(255, 255, 255, 0.05);
 	--content-box-border: transparent;
 	--button-border: rgba(255, 255, 255, 0.05);
-	--action-bar-border: rgba(200, 217, 246, 0.1);
+	--action-bar-border: var(--box-border);
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--blue), transparent 40%);
 }
 
 // Scheme Overrides

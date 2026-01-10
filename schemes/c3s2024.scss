@@ -31,11 +31,9 @@
 	--content-border-radius: 0;
 	--tab-corner-radius: 0;
 
-	// margins
-	--tab-view-margins: 0;
-
 	// gaps
 	--tab-view-gap: 0;
+	--tab-list-gap: 0;
 	--box-gap: 0;
 
 	// padding
@@ -50,6 +48,7 @@
 	--box-bg: transparent;
 	--view-bg: transparent;
 	--menu-bg: transparent;
+	--main-bg: transparent;
 	--body-bg: #000;
 	--button-bg: #000;
 	--tab-bg: transparent;
@@ -68,7 +67,8 @@
 	--suggested: #00ffff;
 	--success: #00ff00;
 	--info: #000;
-	--warning: red;
+	--error: red;
+	--warning: #ffd000;
 	--new: #ffff00;
 
 	// OTHER COLORS
@@ -146,7 +146,7 @@ a:hover {
 
 		#user-submenu {
 			#logout-link > a {
-				color: var(--warning);
+				color: var(--error);
 				font-weight: bold;
 				&:hover {
 					box-shadow: none;

@@ -33,11 +33,9 @@
 	--content-border-radius: 2px;
 	--tab-corner-radius: 3px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -51,6 +49,7 @@
 	// main colors
 	--box-bg: #e88078;
 	--view-bg: #a25954;
+	--main-bg: #a25954;
 	--menu-bg: #3aad60;
 	--body-bg: #fff;
 	--button-bg: #eaafab;
@@ -70,7 +69,8 @@
 	--suggested: #fff;
 	--success: #00ff00;
 	--info: #fff;
-	--warning: #e24d59;
+	--error: #e24d59;
+	--warning: #e2a44d;
 	--new: #ffd556;
 
 	// OTHER COLORS

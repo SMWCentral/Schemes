@@ -34,11 +34,9 @@
 	--content-border-radius: 4px;
 	--tab-corner-radius: 3px;
 
-	// margins
-	--tab-view-margins: 8px;
-
 	// gaps
-	--tab-view-gap: 6px;
+	--tab-view-gap: 8px;
+	--tab-list-gap: 6px;
 	--box-gap: 8px;
 
 	// padding
@@ -47,39 +45,65 @@
 	--button-padding: 6px 12px;
 	--table-cell-padding: 8px;
 
+	// SCHEME PALETTE
+
+	// base colors
+	--base_1: #f5f6f7;
+	--base_2: #e5e7e9;
+	--base_3: #b2b2bc;
+	--base_4: #787880;
+	--base_5: #515158;
+	--base_6: #4a4a4f;
+	--base_7: #3f3f45;
+	--base_8: #323237;
+	--base_9: #2c2c31;
+	--base_10: #262527;
+
+	// scheme colors
+	--pink: #efb0ab;
+	--purple: #e7c7f8;
+	--blue: #abcdef;
+	--green: #92db00;
+	--yellow: #ffd556;
+	--orange: #e4ae68;
+	--red: #d95151;
+	--brown: #897259;
+
+	// accent
+	--accent: #ffaccf;
+
 	// SCHEME COLORS
 
 	// main colors
-	--box-bg: #3f3f45;
-	--view-bg: #2c2c31;
-	--menu-bg: #323237;
-	--body-bg: #272527;
-	--button-bg: #515158;
-	--tab-bg: #515158;
+	--box-bg: var(--base_7);
+	--view-bg: var(--base_9);
+	--main-bg: var(--base_9);
+	--menu-bg: var(--base_8);
+	--body-bg: var(--base_10);
+	--button-bg: var(--base_5);
+	--tab-bg: var(--base_5);
 	--action-bar-bg: rgba(249, 249, 249, 0.06);
-	--code-bg: #262527;
+	--code-bg: var(--base_10);
 
 	// text colors
-	--text: #f5f6f7;
-	--link-1: #abcdef;
-	--link-2: #efb0ab;
-	--admin: #ef8fcc;
+	--text: var(--base_1);
+	--link-1: var(--blue);
+	--link-2: var(--pink);
+	--admin: var(--purple);
 
-	// named colors
-	--accent: #ffaccf;
-	--focus-ring: #abcdef;
-	--suggested: #abcdef;
-	--success: #92db00;
-	--info: rgba(20, 19, 20, 0.7);
-	--warning: #c22c2c;
-	--new: #e4ae68;
+	--suggested: var(--blue);
+	--success: var(--green);
+	--info: color-mix(in srgb, var(--base_10), transparent 30%);
+	--error: var(--red);
+	--warning: var(--orange);
+	--new: var(--orange);
 
 	// OTHER COLORS
 
 	// shadows
 	--drop-shadow: rgba(0, 0, 0, 0.2);
 	--inset-shadow: transparent;
-	--text-shadow: #222;
+	--text-shadow: var(--base_10);
 
 	// highlight
 	--inset-highlight: rgba(255, 255, 255, 0.1);
@@ -88,8 +112,11 @@
 	--border: color-mix(in srgb, var(--text), transparent 90%);
 	--box-border: rgba(255, 255, 255, 0.1);
 	--content-box-border: rgba(255, 255, 255, 0.15);
-	--button-border: color-mix(in srgb, var(--button-bg), white 10%);
+	--button-border: color-mix(in srgb, var(--button-bg), var(--lighten) 10%);
 	--action-bar-border: rgba(249, 249, 249, 0.1);
+
+	// focus ring
+	--focus-ring: color-mix(in srgb, var(--blue), transparent 30%);
 }
 
 // remove shading on main
